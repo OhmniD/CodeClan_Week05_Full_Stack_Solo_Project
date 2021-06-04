@@ -7,4 +7,9 @@ driver1 = Driver("Lando Norris", "British", 78, 4, "False", "static/images/drive
 
 driver_repository.save(driver1)
 
+all_drivers = driver_repository.select_all()
+
+for driver in all_drivers:
+    print(driver.__dict__)
+
 pdb.set_trace()

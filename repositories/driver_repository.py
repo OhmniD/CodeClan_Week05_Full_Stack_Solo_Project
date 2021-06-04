@@ -11,3 +11,15 @@ def save(driver):
     driver.id = result[0]['id']
     
     return driver
+
+def select_all():
+    drivers = []
+
+    sql = "SELECT * FROM drivers"
+    results = run_sql(sql)
+
+    for row in results:
+        driver = Driver(row['name'], row['nationality'], row['championship_points'], row['car_number'], row['is_reserve'], row['picture_url'], row['id'])
+        drivers.append(driver)
+
+    return drivers
