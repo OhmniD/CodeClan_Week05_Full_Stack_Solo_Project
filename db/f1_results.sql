@@ -1,9 +1,9 @@
-DROP TABLE driver_team;
+DROP TABLE drivers_teams;
+DROP TABLE entrants;
+DROP TABLE race_results;
+DROP TABLE rounds;
 DROP TABLE drivers;
 DROP TABLE teams;
--- DROP TABLE
--- DROP TABLE
--- DROP TABLE
 
 CREATE TABLE drivers (
     id INT PRIMARY KEY,
@@ -24,8 +24,30 @@ CREATE TABLE teams (
     logo_url VARCHAR(255)
 );
 
-CREATE TABLE driver_team (
+CREATE TABLE drivers_teams (
     id INT PRIMARY KEY,
     team_id INT REFERENCES teams(id) ON DELETE CASCADE,
     driver_id INT REFERENCES drivers(id) ON DELETE CASCADE
+);
+
+CREATE TABLE rounds (
+    id INT PRIMARY KEY,
+    track_name VARCHAR(255),
+    track_location VARCHAR(255),
+    date DATE,
+    image_url VARCHAR(255)
+);
+
+CREATE TABLE entrants (
+    id INT PRIMARY KEY,
+    round_id INT REFERENCES rounds(id) ON DELETE CASCADE,
+    team_id INT REFERENCES teams(id) ON DELETE CASCADE
+);
+
+CREATE TABLE race_results (
+    id INT PRIMARY KEY,
+    position INT,
+    driver_id INT REFERENCES drivers(id) ON DELETE CASCADE,
+    round_id INT REFERENCES rounds(id) ON DELETE CASCADE,
+    fastest_lap BOOLEAN
 );
