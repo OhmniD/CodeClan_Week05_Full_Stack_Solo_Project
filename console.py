@@ -29,10 +29,14 @@ for driver in all_drivers:
 
 # Test that individual selection works - enter integer of valid row id to confirm
 # print(driver_repository.select(1).__dict__)
-pdb.set_trace()
 ## Team repository testing and initial setup
 team1 = Team("McLaren", "Milton Keynes", 178, "Mercedes", "#ff9e1b", "static/images/teams/mclaren.jpg")
 team_repository.save(team1)
+
+all_teams = team_repository.select_all()
+
+for team in all_teams:
+    print(team.__dict__)
 
 
 pdb.set_trace()
