@@ -12,4 +12,6 @@ all_drivers = driver_repository.select_all()
 for driver in all_drivers:
     print(driver.__dict__)
 
+print(driver_repository.select(1).__dict__)
+
 pdb.set_trace()

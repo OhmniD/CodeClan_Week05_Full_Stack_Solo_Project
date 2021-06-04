@@ -23,3 +23,14 @@ def select_all():
         drivers.append(driver)
 
     return drivers
+
+def select(id):
+    driver = None
+    sql = "SELECT * FROM drivers WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        driver = Driver(result['name'], result['nationality'], result['championship_points'], result['car_number'], result['is_reserve'], result['picture_url'], result['id'])
+
+    return driver
