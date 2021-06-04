@@ -5,7 +5,6 @@ from models.driver import Driver
 def save(driver):
     sql = "INSERT INTO drivers(name, nationality, championship_points, car_number, is_reserve, picture_url) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
     values = [driver.name, driver.nationality, driver.championship_points, driver.car_number, driver.is_reserve, driver.picture_url]
-    
     result = run_sql(sql, values)
     
     driver.id = result[0]['id']
@@ -34,6 +33,12 @@ def select(id):
         driver = Driver(result['name'], result['nationality'], result['championship_points'], result['car_number'], result['is_reserve'], result['picture_url'], result['id'])
 
     return driver
+
+def update(driver):
+    sql = "UPDATE drivers SET (name, nationality, championship_points, car_number, is_reserve, picture_url) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [driver.name, driver.nationality, driver.championship_points, driver.car_number, driver.is_reserve, driver.picture_url, driver.id]
+    run_sql(sql, values)
+
 
 def delete_all():
     sql = "DELETE FROM drivers"

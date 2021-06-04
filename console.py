@@ -16,6 +16,14 @@ all_drivers = driver_repository.select_all()
 for driver in all_drivers:
     print(driver.__dict__)
 
+driver1.championship_points = 103
+driver_repository.update(driver1)
+
+all_drivers = driver_repository.select_all()
+
+for driver in all_drivers:
+    print(driver.__dict__)
+
 # Test that individual selection works - enter integer of valid row id to confirm
 # print(driver_repository.select(1).__dict__)
 
