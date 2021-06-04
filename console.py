@@ -30,6 +30,9 @@ for driver in all_drivers:
 # Test that individual selection works - enter integer of valid row id to confirm
 # print(driver_repository.select(1).__dict__)
 ## Team repository testing and initial setup
+
+team_repository.delete_all()
+
 team1 = Team("McLaren", "Milton Keynes", 178, "Mercedes", "#ff9e1b", "static/images/teams/mclaren.jpg")
 team_repository.save(team1)
 

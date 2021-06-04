@@ -34,3 +34,13 @@ def select(id):
         team = Team(row['name'], row['headquarters'], row['championship_points'], row['engine_supplier'], row['team_colour'], row['logo_url'], row['id'])
     
     return team
+
+def delete_all():
+    sql = "DELETE FROM teams"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM teams WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
