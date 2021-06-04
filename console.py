@@ -3,6 +3,9 @@ import pdb
 from models.driver import Driver
 import repositories.driver_repository as driver_repository
 
+from models.team import Team
+import repositories.team_repository as team_repository
+
 # Driver repository tests and initial setup
 
 driver_repository.delete_all()
@@ -26,7 +29,10 @@ for driver in all_drivers:
 
 # Test that individual selection works - enter integer of valid row id to confirm
 # print(driver_repository.select(1).__dict__)
+pdb.set_trace()
+## Team repository testing and initial setup
+team1 = Team("McLaren", "Milton Keynes", 178, "Mercedes", "#ff9e1b", "static/images/teams/mclaren.jpg")
+team_repository.save(team1)
 
-##
 
 pdb.set_trace()
