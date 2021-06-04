@@ -34,3 +34,12 @@ def select(id):
         driver = Driver(result['name'], result['nationality'], result['championship_points'], result['car_number'], result['is_reserve'], result['picture_url'], result['id'])
 
     return driver
+
+def delete_all():
+    sql = "DELETE FROM drivers"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM drivers WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
