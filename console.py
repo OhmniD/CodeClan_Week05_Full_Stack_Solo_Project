@@ -41,5 +41,13 @@ all_teams = team_repository.select_all()
 for team in all_teams:
     print(team.__dict__)
 
+team1.championship_points = 203
+team_repository.update(team1)
+
+all_teams = team_repository.select_all()
+
+for team in all_teams:
+    print(team.__dict__)
+
 
 pdb.set_trace()

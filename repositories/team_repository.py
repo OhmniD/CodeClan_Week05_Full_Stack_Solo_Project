@@ -35,6 +35,11 @@ def select(id):
     
     return team
 
+def update(team):
+    sql = "UPDATE teams SET (name, headquarters, championship_points, engine_supplier, team_colour, logo_url) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = values = [team.name, team.headquarters, team.championship_points, team.engine_supplier, team.team_colour, team.logo_url, team.id]
+    result = run_sql(sql, values)
+
 def delete_all():
     sql = "DELETE FROM teams"
     run_sql(sql)
