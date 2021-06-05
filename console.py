@@ -79,4 +79,13 @@ all_rounds = round_repository.select_all()
 for round in all_rounds:
     print(round.__dict__)
 
+round1.date = "2021-12-21"
+round_repository.update(round1)
+
+all_rounds = round_repository.select_all()
+
+for round in all_rounds:
+    print(round.__dict__)
+
+
 pdb.set_trace()
