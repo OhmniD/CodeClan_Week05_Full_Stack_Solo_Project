@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <ul>
+        <li>Name: {{ driver.name }}</li>
+        <li>Nationality: {{driver.nationality}}</li>
+
+        {% for team in teams %}
+            <li>Team: {{team.name}} </li>
+        {% endfor %}
+
+        <li>Car Number: {{driver.car_number}}</li>
+        <li>Championship points: {{driver.championship_points}}</li>
+    </ul>
+</section>
+
+
+{% endblock %}

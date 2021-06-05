@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <ul>
+        {% for driver in drivers %}
+        <li><a href="/drivers/{{ driver.id }}">Name: {{ driver.name }}</a></li>
+        {% endfor %}
+    </ul>
+</section>
+
+{% endblock %}

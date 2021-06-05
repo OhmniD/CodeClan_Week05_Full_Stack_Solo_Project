@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 
 from models.driver import Driver
+from models.team import Team
 
 def save(driver):
     sql = "INSERT INTO drivers(name, nationality, championship_points, car_number, is_reserve, picture_url) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
@@ -48,3 +49,19 @@ def delete(id):
     sql = "DELETE FROM drivers WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def team(driver):
+    teams = []
+
+    sql = '''SELECT teams.* FROM teams 
+            INNER JOIN drivers_teams ON drivers_teams.team_id = teams.id 
+            WHERE driver_id = %s'''
+    values = [driver.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        team = Team(row['name'], row['headquarters'], row['championship_points'], row['engine_supplier'], row['team_colour'], row['logo_url'], row['id'])
+        teams.append(team)
+
+    return teams
+
