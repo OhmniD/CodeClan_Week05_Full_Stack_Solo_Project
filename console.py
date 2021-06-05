@@ -9,7 +9,7 @@ import repositories.team_repository as team_repository
 from models.driver_team import DriverTeam
 import repositories.driver_team_repository as driver_team_repository
 
-# Driver repository tests and initial setup
+## Driver repository tests and initial setup
 
 driver_repository.delete_all()
 
@@ -32,6 +32,7 @@ for driver in all_drivers:
 
 # Test that individual selection works - enter integer of valid row id to confirm
 # print(driver_repository.select(1).__dict__)
+
 ## Team repository testing and initial setup
 
 team_repository.delete_all()
@@ -51,6 +52,9 @@ all_teams = team_repository.select_all()
 
 for team in all_teams:
     print(team.__dict__)
+
+## Testing drivers_teams join table works
+driver_team_repository.delete_all()
 
 driver1_team1 = DriverTeam(driver1, team1)
 driver_team_repository.save(driver1_team1)
