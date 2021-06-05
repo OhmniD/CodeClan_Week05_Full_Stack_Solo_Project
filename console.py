@@ -146,4 +146,9 @@ driver_team_repository.save(driver2_team2)
 driver_team_repository.save(driver3_team3)
 driver_team_repository.save(driver3_team4)
 
+championship = driver_repository.championship_order()
+
+for driver in championship:
+    print(driver.__dict__)
+
 pdb.set_trace()

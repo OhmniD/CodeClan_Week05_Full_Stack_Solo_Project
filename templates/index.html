@@ -2,6 +2,13 @@
 
 {% block content %}
 
-<p>testing 123</p>
+<section>
+    <p>Driver's Championship:</p>
+    <ol>
+        {% for driver in championship %}
+        <li>{{ driver.name }}</li>
+        {% endfor %}
+    </ol>
+</section>
 
 {% endblock %}
