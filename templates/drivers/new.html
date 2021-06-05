@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <h2>Add new driver</h2>
+    <form action="/drivers" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+        <label for="nationality">Nationality:</label>
+        <input type="text" name="nationality">
+        <label for="car_number">Car Number:</label>
+        <input type="number" name="car_number">
+        <label for="is_reserve">Reserve driver?</label>
+        <input type="checkbox" name="is_reserve">
+        <label for="picture_url">Link to picture:</label>
+        <input type="text" name="picture_url">
+        <input type="submit" value="Add driver">
+    </form>
+</section>
+
+{% endblock %}
