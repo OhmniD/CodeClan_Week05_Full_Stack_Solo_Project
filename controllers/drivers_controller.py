@@ -46,3 +46,8 @@ def create_driver():
     driver_team_repository.save(driver_team)
 
     return redirect('/drivers')
+
+@drivers_blueprint.route("/drivers/<id>/delete", methods=['GET'])
+def delete_driver(id):
+    driver_repository.delete(id)
+    return redirect('/drivers')
