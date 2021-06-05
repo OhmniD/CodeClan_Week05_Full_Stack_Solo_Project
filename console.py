@@ -72,4 +72,9 @@ for team_driver in all_driver_team_relationships:
 round1 = Round("Interlagos", "Sao Paulo, Brazil", "2021-11-07", "static/images/tracks/interlagos.jpg")
 round_repository.save(round1)
 
+all_rounds = round_repository.select_all()
+
+for round in all_rounds:
+    print(round.__dict__)
+
 pdb.set_trace()
