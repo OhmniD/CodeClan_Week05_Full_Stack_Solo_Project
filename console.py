@@ -9,6 +9,9 @@ import repositories.team_repository as team_repository
 from models.driver_team import DriverTeam
 import repositories.driver_team_repository as driver_team_repository
 
+from models.round import Round
+import repositories.round_repository as round_repository
+
 ## Driver repository tests and initial setup
 
 driver_repository.delete_all()
@@ -64,5 +67,9 @@ all_driver_team_relationships = driver_team_repository.select_all()
 for team_driver in all_driver_team_relationships:
     print(team_driver.__dict__)
 
+## Testing rounds methods
+
+round1 = Round("Interlagos", "Sao Paulo, Brazil", "2021-11-07", "static/images/tracks/interlagos.jpg")
+round_repository.save(round1)
 
 pdb.set_trace()
