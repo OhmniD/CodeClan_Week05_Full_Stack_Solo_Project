@@ -32,13 +32,18 @@ def select_all():
 def select(id):
     sql = "SELECT * FROM drivers_teams WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)
+    result = run_sql(sql, values)[0]
 
     driver = driver_repository.select(result["driver_id"])
     team = team_repository.select(result["team_id"])
     driver_team = DriverTeam(driver, team, result["id"])
 
     return driver_team
+
+def update(driver_team):
+    sql = "UPDATE drivers_teams SET (driver_id, team_id) = (%s, %s) WHERE id = %s"
+    values = [driver_team.driver.id, driver_team.team.id, driver_team.id]
+    run_sql(sql, values)
 
 def delete_all():
     sql = "DELETE FROM drivers_teams"
@@ -49,7 +54,3 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
-def update(driver_team):
-    sql = "UPDATE drivers_teams SET (driver_id, team_id) = (%s, %s) WHERE id = %s"
-    values = [driver_team.driver.id, driver_team.team.id, driver_team.id]
-    run_sql(sql, values)

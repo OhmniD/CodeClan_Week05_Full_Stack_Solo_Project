@@ -32,13 +32,18 @@ def select_all():
 def select(id):
     sql = "SELECT * FROM entrants WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)
+    result = run_sql(sql, values)[0]
 
     round = round_repository.select(result["round_id"])
     team = team_repository.select(result["team_id"])
     entrant = Round(round, team, result["id"])
 
     return entrant
+
+def update(entrant):
+    sql = "UPDATE entrants SET (round_id, team_id) = (%s, %s) WHERE id = %s"
+    values = [entrant.round.id, entrant.team.id, entrant.id]
+    run_sql(sql, values)
 
 def delete_all():
     sql = "DELETE FROM entrants"
@@ -47,9 +52,4 @@ def delete_all():
 def delete(id):
     sql = "DELETE FROM entrants WHERE id = %s"
     values = [id]
-    run_sql(sql, values)
-
-def update(entrant):
-    sql = "UPDATE entrants SET (round_id, team_id) = (%s, %s) WHERE id = %s"
-    values = [entrant.round.id, entrant.team.id, entrant.id]
     run_sql(sql, values)

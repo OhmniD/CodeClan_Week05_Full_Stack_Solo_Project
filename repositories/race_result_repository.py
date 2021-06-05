@@ -27,3 +27,31 @@ def select_all():
         race_results.append(race_result)
     
     return race_results
+
+def select(id):
+    race_result = NoneType
+
+    sql = "SELECT * FROM race_results WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        driver = driver_repository.select(result['driver_id'])
+        round = round_repository.select(result['round_id'])
+        race_result = RaceResult(result['position'], driver, round, result['fastest_lap'], result['id'])
+    
+    return race_result
+
+def update(race_result):
+    sql = "UPDATE race_results SET (position, driver_id, round_id, fastest_lap) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [race_result.position, race_result.driver.id, race_result.round.id, race_result.fastest_lap, race_result.id]
+    run_sql(sql, values)
+
+def delete_all():
+    sql = "DELETE FROM race_results"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM race_results WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
