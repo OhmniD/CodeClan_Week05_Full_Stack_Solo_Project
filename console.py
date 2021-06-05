@@ -12,6 +12,9 @@ import repositories.driver_team_repository as driver_team_repository
 from models.round import Round
 import repositories.round_repository as round_repository
 
+from models.entrant import Entrant
+import repositories.entrant_repository as entrant_repository
+
 ## Driver repository tests and initial setup
 
 driver_repository.delete_all()
@@ -87,5 +90,19 @@ all_rounds = round_repository.select_all()
 for round in all_rounds:
     print(round.__dict__)
 
+## Testing entrants join table
+
+entrant_repository.delete_all()
+
+round1 = Round("Interlagos", "Sao Paulo, Brazil", "2021-11-07", "static/images/tracks/interlagos.jpg")
+round_repository.save(round1)
+
+entrant1 = Entrant(round1, team1)
+entrant_repository.save(entrant1)
+
+all_entrants = entrant_repository.select_all()
+
+for entrant in all_entrants:
+    print(entrant.__dict__)
 
 pdb.set_trace()

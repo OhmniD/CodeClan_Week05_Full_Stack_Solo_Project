@@ -27,9 +27,9 @@ def select(id):
 
     sql = "SELECT * FROM rounds WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)
+    result = run_sql(sql, values)[0]
 
-    if round != None:
+    if result is not None:
         round = Round(result['track_name'], result['track_location'], result['date'], result['image_url'], result['id'])
     
     return round
@@ -38,7 +38,7 @@ def update(round):
     sql = "UPDATE rounds SET (track_name, track_location, date, image_url) = (%s, %s, %s, %s) WHERE id = %s"
     values = [round.track_name, round.track_location, round.date, round.image_url, round.id]
     run_sql(sql, values)
-    
+
 def delete_all():
     sql = "DELETE FROM rounds"
     run_sql(sql)
