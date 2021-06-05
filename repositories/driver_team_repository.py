@@ -48,3 +48,8 @@ def delete(id):
     sql = "DELETE FROM drivers_teams WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def update(driver_team):
+    sql = "UPDATE drivers_teams SET (driver_id, team_id) = (%s, %s) WHERE id = %s"
+    values = [driver_team.driver.id, driver_team.team.id, driver_team.id]
+    run_sql(sql, values)
