@@ -7,6 +7,15 @@
     <form action="/drivers" method="post">
         <label for="name">Name:</label>
         <input type="text" name="name">
+
+        <label for="team">Team:</label>
+            <select name="team_id">
+                {% for team in teams %}
+                    <option value="{{team.id}}">{{team.name}}</option>
+                {% endfor %}
+            </select>
+        
+
         <label for="nationality">Nationality:</label>
         <input type="text" name="nationality">
         <label for="car_number">Car Number:</label>

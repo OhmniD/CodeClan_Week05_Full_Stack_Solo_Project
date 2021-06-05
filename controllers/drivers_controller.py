@@ -1,7 +1,10 @@
 from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.driver import Driver
+from models.driver_team import DriverTeam
 import repositories.driver_repository as driver_repository
+import repositories.driver_team_repository as driver_team_repository
+import repositories.team_repository as team_repository
 
 drivers_blueprint = Blueprint("drivers", __name__)
 
@@ -13,9 +16,6 @@ def all_drivers():
 
     return render_template("drivers/index.html", drivers=drivers)
 
-@drivers_blueprint.route("/drivers/new", methods=["GET"])
-def new_driver():
-    return render_template("drivers/new.html")
 
 @drivers_blueprint.route("/drivers/<id>",  methods=["GET"])
 def driver_details(id):
@@ -23,6 +23,11 @@ def driver_details(id):
     teams = driver_repository.team(driver)
     
     return render_template("drivers/show.html", driver=driver, teams=teams)
+
+@drivers_blueprint.route("/drivers/new", methods=["GET"])
+def new_driver():
+    teams = team_repository.select_all()
+    return render_template("drivers/new.html", teams=teams)
 
 @drivers_blueprint.route("/drivers", methods=["POST"])
 def create_driver():
@@ -34,4 +39,10 @@ def create_driver():
     championship_points = 0
     driver = Driver(name, nationality, championship_points, car_number, is_reserve, picture_url)
     driver_repository.save(driver)
+
+    team_id = request.form['team_id']
+    team = team_repository.select(team_id)
+    driver_team = DriverTeam(driver, team)
+    driver_team_repository.save(driver_team)
+
     return redirect('/drivers')
