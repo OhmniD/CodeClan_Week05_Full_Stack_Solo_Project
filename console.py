@@ -69,6 +69,8 @@ for team_driver in all_driver_team_relationships:
 
 ## Testing rounds methods
 
+round_repository.delete_all()
+
 round1 = Round("Interlagos", "Sao Paulo, Brazil", "2021-11-07", "static/images/tracks/interlagos.jpg")
 round_repository.save(round1)
 
