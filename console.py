@@ -6,6 +6,9 @@ import repositories.driver_repository as driver_repository
 from models.team import Team
 import repositories.team_repository as team_repository
 
+from models.driver_team import DriverTeam
+import repositories.driver_team_repository as driver_team_repository
+
 # Driver repository tests and initial setup
 
 driver_repository.delete_all()
@@ -48,6 +51,14 @@ all_teams = team_repository.select_all()
 
 for team in all_teams:
     print(team.__dict__)
+
+driver1_team1 = DriverTeam(driver1, team1)
+driver_team_repository.save(driver1_team1)
+
+all_driver_team_relationships = driver_team_repository.select_all()
+
+for team_driver in all_driver_team_relationships:
+    print(team_driver.__dict__)
 
 
 pdb.set_trace()

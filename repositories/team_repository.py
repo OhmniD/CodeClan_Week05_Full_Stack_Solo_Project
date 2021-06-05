@@ -31,7 +31,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        team = Team(row['name'], row['headquarters'], row['championship_points'], row['engine_supplier'], row['team_colour'], row['logo_url'], row['id'])
+        team = Team(result['name'], result['headquarters'], result['championship_points'], result['engine_supplier'], result['team_colour'], result['logo_url'], result['id'])
     
     return team
 
