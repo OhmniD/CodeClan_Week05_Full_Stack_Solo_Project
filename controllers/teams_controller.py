@@ -13,3 +13,14 @@ def all_teams():
     teams = team_repository.select_all()
 
     return render_template("teams/index.html", teams=teams)
+
+@teams_blueprint.route("/teams/<id>", methods=["GET"])
+def team_details(id):
+    team = team_repository.select(id)
+    drivers = team_repository.drivers(team)
+
+    return render_template("teams/show.html", team=team, drivers=drivers)
+
+@teams_blueprint.route("/teams/new", methods=["GET"])
+def new_team():
+    return render_template("teams/new.html")

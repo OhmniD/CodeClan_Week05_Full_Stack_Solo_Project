@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <h2>Add new team</h2>
+    <form action="/teams" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+        
+
+        <label for="headquarters">Headquarters:</label>
+        <input type="text" name="headquarters">
+        <label for="engine_supplier">Engine supplier:</label>
+        <input type="text" name="engine_supplier">
+        <label for="team_colour">Team colour (hex):</label>
+        <input type="text" name="team_colour">
+        <label for="logo_url">Link to logo:</label>
+        <input type="text" name="logo_url">
+        <input type="submit" value="Add team">
+    </form>
+</section>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <ul>
+        <li>Name: {{ team.name }}</li>
+        <li>Headquarters: {{team.headquarters}}</li>
+
+        <li>Engine supplier: {{team.engine_supplier}}</li>
+        <li>Championship points: {{team.championship_points}}</li>
+        <a href="{{team.id}}/edit">Edit team</a>
+        <a href="{{team.id}}/delete">Delete team</a>
+    </ul>
+    <ul>
+        {% for driver in drivers %}
+            <li>Driver: {{driver.name}}{% if driver.is_reserve == True %} (Reserve) {% endif %} </li>
+        {% endfor %}
+    </ul>
+</section>
+
+
+{% endblock %}
