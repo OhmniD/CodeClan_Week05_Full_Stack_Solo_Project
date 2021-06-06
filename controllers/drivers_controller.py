@@ -70,6 +70,10 @@ def update_driver(id):
     driver = Driver(name, nationality, championship_points, car_number, is_reserve, picture_url, id)
     driver_repository.update(driver)
 
+# Will update one team if remove for/if statement, but how to get multiple to update
+
+    #for key in request.form:
+        #if key == 'team_id':
     team_id = request.form['team_id']
     team = team_repository.select(team_id)
     driver_team = DriverTeam(driver, team)
