@@ -37,3 +37,8 @@ def create_team():
     team_repository.save(team)
 
     return redirect('/teams')
+
+@teams_blueprint.route("/teams/<id>/delete", methods=["GET"])
+def delete_team(id):
+    team_repository.delete(id)
+    return redirect('/teams')
