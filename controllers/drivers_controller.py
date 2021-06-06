@@ -47,7 +47,30 @@ def create_driver():
 
     return redirect('/drivers')
 
-@drivers_blueprint.route("/drivers/<id>/delete", methods=['GET'])
+@drivers_blueprint.route("/drivers/<id>/delete", methods=["GET"])
 def delete_driver(id):
     driver_repository.delete(id)
+    return redirect('/drivers')
+
+@drivers_blueprint.route("/drivers/<id>/edit", methods=["GET"])
+def edit_driver(id):
+    driver = driver_repository.select(id)
+    teams = team_repository.select_all()
+    return render_template("drivers/edit.html", teams=teams, driver=driver)
+
+@drivers_blueprint.route("/drivers/<id>", methods=["POST"])
+def update_driver(id):
+    name = request.form['name']
+    nationality = request.form['nationality']
+    championship_points = request.form['championship_points']
+    car_number = request.form['car_number']
+    is_reserve = True if 'is_reserve' in request.form else False
+    picture_url = request.form['picture_url']
+    driver = Driver(name, nationality, championship_points, car_number, is_reserve, picture_url, id)
+    driver_repository.update(driver)
+
+    team_id = request.form['team_id']
+    team = team_repository.select(team_id)
+    driver_team = DriverTeam(driver, team)
+    driver_team_repository.update(driver_team)
     return redirect('/drivers')

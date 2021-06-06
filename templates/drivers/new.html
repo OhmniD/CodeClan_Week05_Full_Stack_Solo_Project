@@ -9,7 +9,7 @@
         <input type="text" name="name">
 
         <label for="team">Team:</label>
-            <select name="team_id">
+            <select name="team_id" multiple>
                 {% for team in teams %}
                     <option value="{{team.id}}">{{team.name}}</option>
                 {% endfor %}

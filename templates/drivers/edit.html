@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <h2>Edit driver</h2>
+    <form action="/drivers/{{ driver.id}}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{driver.name}}">
+
+        <label for="team">Team:</label>
+            <select name="team_id" multiple>
+                {% for team in teams %}
+                    <option value="{{team.id}}">{{team.name}}</option>
+                {% endfor %}
+            </select>
+        
+
+        <label for="nationality">Nationality:</label>
+        <input type="text" name="nationality" value="{{ driver.nationality }}">
+        <label for="championship_points">Championship points:</label>
+        <input type="number" name="championship_points" value="{{ driver.championship_points }}">
+        <label for="car_number">Car Number:</label>
+        <input type="number" name="car_number" value="{{ driver.car_number }}">
+        
+        <label for="is_reserve">Reserve driver?</label>
+        <input type="checkbox"{% if driver.is_reserve %}checked{% endif %} name="is_reserve">
+        
+        <label for="picture_url">Link to picture:</label>
+        <input type="text" name="picture_url" value="{{ driver.picture_url }}">
+        <input type="submit" value="Update driver">
+    </form>
+</section>
+
+{% endblock %}
