@@ -17,12 +17,16 @@
                     <option value="{{ driver.id }}">{{ driver.name }}</option>
                 {% endfor %}  
         </select>
+        <label for="fastest_lap">Fastest lap?</label>
+        <input type="radio" name="fastest_lap">
         <label for="2">Second place:</label>
         <select name="2">
             {% for driver in drivers %}
                     <option value="{{ driver.id }}">{{ driver.name }}</option>
                 {% endfor %}  
         </select>
+        <label for="fastest_lap">Fastest lap?</label>
+        <input type="radio" name="fastest_lap">
         <input type="submit" value="Enter results">
 
         {{ values }}
