@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <ul>
+        {% for round in rounds %}
+        <li><a href="/rounds/{{ round.id }}">Name: {{ round.track_name }}</a></li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="/rounds/new">Add new round</a>
+</section>
+
+
+{% endblock %}
