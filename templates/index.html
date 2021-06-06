@@ -5,8 +5,13 @@
 <section>
     <p>Driver's Championship:</p>
     <ol>
-        {% for driver in championship %}
-        <li>{{ driver.name }}</li>
+        {% for driver in driver_championship %}
+        <li>{{ driver.name }} - {{ driver.championship_points }} points</li>
+        {% endfor %}
+    </ol>
+    <ol>
+        {% for team in team_championship %}
+        <li>{{ team.name }} - {{ team.championship_points }} points</li>
         {% endfor %}
     </ol>
 </section>

@@ -65,7 +65,7 @@ def team(driver):
 
     return teams
 
-def championship_order():
+def driver_championship():
     drivers = []
 
     sql = "SELECT * FROM drivers WHERE is_reserve IS NOT True ORDER BY championship_points DESC"

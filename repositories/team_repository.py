@@ -64,3 +64,15 @@ def drivers(team):
         drivers.append(driver)
 
     return drivers
+
+def team_championship():
+    teams = []
+
+    sql = "SELECT * FROM teams ORDER BY championship_points DESC"
+    results = run_sql(sql)
+
+    for row in results:
+        team = Team(row['name'], row['headquarters'], row['championship_points'], row['engine_supplier'], row['team_colour'], row['logo_url'], row['id'])
+        teams.append(team)
+
+    return teams
