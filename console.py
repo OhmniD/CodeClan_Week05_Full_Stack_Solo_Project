@@ -146,7 +146,7 @@ driver_team_repository.save(driver2_team2)
 driver_team_repository.save(driver3_team3)
 driver_team_repository.save(driver3_team4)
 
-championship = driver_repository.championship_order()
+championship = driver_repository.driver_championship()
 
 for driver in championship:
     print(driver.__dict__)
