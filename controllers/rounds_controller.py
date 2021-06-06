@@ -30,3 +30,8 @@ def create_rounds():
     round = Round(track_name, track_location, date, image_url)
     round_repository.save(round)
     return redirect('/rounds')
+
+@rounds_blueprint.route("/rounds/<id>/delete", methods=["GET"])
+def delete_round(id):
+    round_repository.delete(id)
+    return redirect('/rounds')
