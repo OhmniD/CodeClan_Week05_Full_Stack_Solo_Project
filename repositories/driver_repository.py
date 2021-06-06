@@ -1,7 +1,6 @@
 from db.run_sql import run_sql
 
 from models.driver import Driver
-from models.team import Team
 
 def save(driver):
     sql = "INSERT INTO drivers(name, nationality, championship_points, car_number, is_reserve, picture_url) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
@@ -15,7 +14,7 @@ def save(driver):
 def select_all():
     drivers = []
 
-    sql = "SELECT * FROM drivers"
+    sql = "SELECT * FROM drivers ORDER BY name ASC"
     results = run_sql(sql)
 
     for row in results:
@@ -49,30 +48,3 @@ def delete(id):
     sql = "DELETE FROM drivers WHERE id = %s"
     values = [id]
     run_sql(sql, values)
-
-def team(driver):
-    teams = []
-
-    sql = '''SELECT teams.* FROM teams 
-            INNER JOIN drivers_teams ON drivers_teams.team_id = teams.id 
-            WHERE driver_id = %s'''
-    values = [driver.id]
-    results = run_sql(sql, values)
-
-    for row in results:
-        team = Team(row['name'], row['headquarters'], row['championship_points'], row['engine_supplier'], row['team_colour'], row['logo_url'], row['id'])
-        teams.append(team)
-
-    return teams
-
-def championship_order():
-    drivers = []
-
-    sql = "SELECT * FROM drivers WHERE is_reserve IS NOT True ORDER BY championship_points DESC"
-    results = run_sql(sql)
-
-    for row in results:
-        driver = Driver(row['name'], row['nationality'], row['championship_points'], row['car_number'], row['is_reserve'], row['picture_url'], row['id'])
-        drivers.append(driver)
-
-    return drivers
