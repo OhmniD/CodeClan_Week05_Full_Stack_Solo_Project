@@ -107,6 +107,8 @@ for entrant in all_entrants:
 
 ## Testing race_results table
 
+race_result_repository.delete_all()
+
 result1 = RaceResult(1, driver1, round1, "True")
 race_result_repository.save(result1)
 
@@ -114,5 +116,39 @@ all_race_results = race_result_repository.select_all()
 
 for race_result in all_race_results:
     print(race_result.__dict__)
+
+## Testing retrieve team for driver functionality
+
+driver1_team = driver_repository.team(driver1)
+
+print(driver1_team)
+
+## Adding some more data
+
+driver2 = Driver("Lewis Hamilton", "British", 274, 44, "False", "static/images/drivers/lewis_hamilton.jpg")
+driver_repository.save(driver2)
+driver3 = Driver("Alex Albon", "Thai", 0, 23, "True", "static/images/drivers/alex_albon.jpg")
+driver_repository.save(driver3)
+
+team2 = Team("Mercedes AMG Petronas", "Brackley, United Kingdom", 381, "Mercedes", "#00D2BE", "static/images/teams/mercedes.jpg")
+team_repository.save(team2)
+team3 = Team("Red Bull Racing", "Milton Keynes, United Kingdom", 209, "Honda", "#0600EF", "static/images/teams/red_bull.jpg")
+team_repository.save(team3)
+team4 = Team("Alpha Tauri", "Faenza, Italy", 143, "Honda", "#2B4562", "static/images/teams/alpha_tauri.jpg")
+team_repository.save(team4)
+
+driver2_team2 = DriverTeam(driver2, team2)
+driver3_team3 = DriverTeam(driver3, team3)
+driver3_team4 = DriverTeam(driver3, team4)
+
+
+driver_team_repository.save(driver2_team2)
+driver_team_repository.save(driver3_team3)
+driver_team_repository.save(driver3_team4)
+
+championship = driver_repository.championship_order()
+
+for driver in championship:
+    print(driver.__dict__)
 
 pdb.set_trace()
