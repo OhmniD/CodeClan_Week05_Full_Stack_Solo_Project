@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <h2>Edit round</h2>
+    <form action="/rounds/{{ round.id}}" method="post">
+        <label for="track_name">Track name:</label>
+        <input type="text" name="track_name" value="{{round.track_name}}">
+        <label for="track_location">Track location:</label>
+        <input type="text" name="track_location" value="{{ round.track_location }}">
+        <label for="date">Date:</label>
+        <input type="date" name="date" value="{{ round.date }}">        
+        <label for="image_url">Link to track image:</label>
+        <input type="text" name="image_url" value="{{ round.image_url }}">
+        <input type="submit" value="Update round">
+    </form>
+</section>
+
+{% endblock %}

@@ -35,3 +35,19 @@ def create_rounds():
 def delete_round(id):
     round_repository.delete(id)
     return redirect('/rounds')
+
+@rounds_blueprint.route("/rounds/<id>/edit", methods=["GET"])
+def edit_round(id):
+    round = round_repository.select(id)
+    return render_template("/rounds/edit.html", round=round)
+
+@rounds_blueprint.route("/rounds/<id>", methods=["POST"])
+def update_round(id):
+    track_name = request.form['track_name']
+    track_location = request.form['track_location']
+    date = request.form['date']
+    image_url = request.form['image_url']
+
+    round = Round(track_name, track_location, date, image_url, id)
+    round_repository.update(round)
+    return redirect('/rounds')
