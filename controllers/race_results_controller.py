@@ -37,6 +37,8 @@ def save_race_result():
         race_result_repository.save(race_result)
 
         driver.championship_points += int(points_system[str(x)])
+        if request.form['fastest_lap'] == 'on' and position <= 10:
+            driver.championship_points += 1
         teams = driver_repository.team(driver)
         for team in teams:
             team_repository.team_points(team)
