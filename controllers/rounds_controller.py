@@ -10,3 +10,8 @@ def all_rounds():
     rounds = round_repository.select_all()
 
     return render_template("/rounds/index.html", rounds=rounds)
+
+@rounds_blueprint.route("/rounds/<id>", methods=["GET"])
+def round_details(id):
+    round = round_repository.select(id)
+    return render_template("/rounds/show.html", round=round)
