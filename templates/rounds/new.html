@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <h2>Add new round</h2>
+    <form action="/rounds" method="post">
+        <label for="name">Track name:</label>
+        <input type="text" name="track_name">
+        <label for="track_location">Track Location:</label>
+        <input type="text" name="track_location">
+        <label for="date">Date:</label>
+        <input type="date" name="date">
+        <label for="image_url">Link to track image:</label>
+        <input type="text" name="image_url">
+        <input type="submit" value="Add round">
+    </form>
+</section>
+
+{% endblock %}

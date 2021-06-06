@@ -15,3 +15,18 @@ def all_rounds():
 def round_details(id):
     round = round_repository.select(id)
     return render_template("/rounds/show.html", round=round)
+
+@rounds_blueprint.route("/rounds/new", methods=["GET"])
+def new_round():
+    return render_template("/rounds/new.html")
+
+@rounds_blueprint.route("/rounds", methods=["POST"])
+def create_rounds():
+    track_name = request.form['track_name']
+    track_location = request.form['track_location']
+    date = request.form['date']
+    image_url = request.form['image_url']
+
+    round = Round(track_name, track_location, date, image_url)
+    round_repository.save(round)
+    return redirect('/rounds')
