@@ -24,3 +24,16 @@ def team_details(id):
 @teams_blueprint.route("/teams/new", methods=["GET"])
 def new_team():
     return render_template("teams/new.html")
+
+@teams_blueprint.route("/teams", methods=["POST"])
+def create_team():
+    name = request.form['name']
+    headquarters = request.form['headquarters']
+    engine_supplier = request.form['engine_supplier']
+    team_colour = request.form['team_colour']
+    logo_url = request.form['logo_url']
+    championship_points = 0
+    team = Team(name, headquarters, championship_points, engine_supplier, team_colour, logo_url)
+    team_repository.save(team)
+
+    return redirect('/teams')
