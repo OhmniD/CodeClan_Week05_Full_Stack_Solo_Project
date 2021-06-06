@@ -76,3 +76,13 @@ def team_championship():
         teams.append(team)
 
     return teams
+
+def team_points(team):
+    total_team_points = 0
+    driver_list = drivers(team)
+    for driver in driver_list:
+        total_team_points += driver.championship_points
+    team = Team(team.name, team.headquarters, total_team_points, team.engine_supplier, team.team_colour, team.logo_url, team.id)
+    update(team)
+    
+    
