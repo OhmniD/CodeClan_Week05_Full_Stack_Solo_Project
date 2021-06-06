@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 
 from models.driver import Driver
+from models.team import Team
 
 def save(driver):
     sql = "INSERT INTO drivers(name, nationality, championship_points, car_number, is_reserve, picture_url) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
