@@ -56,7 +56,8 @@ def delete_driver(id):
 def edit_driver(id):
     driver = driver_repository.select(id)
     teams = team_repository.select_all()
-    return render_template("drivers/edit.html", teams=teams, driver=driver)
+    driver_teams = driver_repository.team(driver)
+    return render_template("drivers/edit.html", teams=teams, driver=driver, driver_teams=driver_teams)
 
 @drivers_blueprint.route("/drivers/<id>", methods=["POST"])
 def update_driver(id):

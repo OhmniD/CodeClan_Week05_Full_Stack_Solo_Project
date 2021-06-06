@@ -11,7 +11,12 @@
         <label for="team">Team:</label>
             <select name="team_id" multiple>
                 {% for team in teams %}
-                    <option value="{{team.id}}">{{team.name}}</option>
+                    <option value="{{team.id}}"
+                    {% for driver_team in driver_teams %}
+                    {% if driver_team.id == team.id %}
+                    selected
+                    {% endif %}
+                    {% endfor %}>{{team.name}}</option>
                 {% endfor %}
             </select>
         
