@@ -2,6 +2,7 @@ from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.round import Round
 import repositories.round_repository as round_repository
+import repositories.race_result_repository as race_result_repository
 
 rounds_blueprint = Blueprint("rounds", __name__)
 
@@ -51,3 +52,8 @@ def update_round(id):
     round = Round(track_name, track_location, date, image_url, id)
     round_repository.update(round)
     return redirect('/rounds')
+
+@rounds_blueprint.route("/rounds/<id>/results", methods=["GET"])
+def view_round_results(id):
+    results = race_result_repository.all_results_by_round(id)
+    return render_template("/rounds/results.html", results=results)

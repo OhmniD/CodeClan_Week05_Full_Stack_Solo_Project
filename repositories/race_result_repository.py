@@ -55,3 +55,20 @@ def delete(id):
     sql = "DELETE FROM race_results WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def all_results_by_round(round_id):
+    results_by_round = []
+
+    sql = "SELECT * FROM race_results WHERE round_id = %s ORDER BY position ASC"
+    values = [round_id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        id = row['id']
+        position = row['position']
+        fastest_lap = row['fastest_lap']
+        driver = driver_repository.select(row['driver_id'])
+        round = round_repository.select(row['round_id'])
+        result = RaceResult(position, driver, round, fastest_lap, id)
+        results_by_round.append(result)
+    return results_by_round
