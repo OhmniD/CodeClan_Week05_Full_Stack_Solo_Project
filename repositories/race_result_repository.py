@@ -76,3 +76,21 @@ def all_results_by_round(round_id):
         result = RaceResult(position, driver, team, round, fastest_lap, id)
         results_by_round.append(result)
     return results_by_round
+
+def all_results_by_driver(driver_id):
+    results_by_driver = []
+
+    sql = "SELECT * FROM race_results WHERE driver_id = %s ORDER BY position ASC"
+    values = [driver_id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        id = row['id']
+        position = row['position']
+        fastest_lap = row['fastest_lap']
+        driver = driver_repository.select(row['driver_id'])
+        team = team_repository.select(row['team_id'])
+        round = round_repository.select(row['round_id'])
+        result = RaceResult(position, driver, team, round, fastest_lap, id)
+        results_by_driver.append(result)
+    return results_by_driver

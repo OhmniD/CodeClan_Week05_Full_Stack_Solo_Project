@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <ol>
+        {% for result in results %}
+        <li>{{result.position}} - {{result.driver.name}} ({{result.round.track_name}}) {{result.team.name}}</li>
+        {% endfor %}
+    </ol>
+</section>
+
+
+{% endblock %}

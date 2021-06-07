@@ -5,6 +5,7 @@ from models.driver_team import DriverTeam
 import repositories.driver_repository as driver_repository
 import repositories.driver_team_repository as driver_team_repository
 import repositories.team_repository as team_repository
+import repositories.race_result_repository as race_result_repository
 
 drivers_blueprint = Blueprint("drivers", __name__)
 
@@ -79,3 +80,8 @@ def update_driver(id):
     driver_team = DriverTeam(driver, team)
     driver_team_repository.update(driver_team)
     return redirect('/drivers')
+
+@drivers_blueprint.route("/drivers/<id>/results", methods=["GET"])
+def view_driver_results(id):
+    results = race_result_repository.all_results_by_driver(id)
+    return render_template("/rounds/results.html", results=results)
