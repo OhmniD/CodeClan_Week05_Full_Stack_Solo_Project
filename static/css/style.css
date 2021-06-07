@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Poppins&display=swap');
+
+@font-face {
+    font-family: "Formula1-Regular";
+    src: url("/static/fonts/Formula1-Regular.otf") format("opentype");
+}
+@font-face {
+    font-family: "Formula1-Bold";
+    src: url("/static/fonts/Formula1-Bold.otf") format("opentype");
+}
+@font-face {
+    font-family: "Formula1-Wide";
+    src: url("/static/fonts/Formula1-Wide.otf") format("opentype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+header, footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding:15px;
+    font-family: "Formula1-Regular";
+    background-color: #15141D;
+}
+
+header > h1, footer {
+    color: #F2F1ED;
+    /* text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; */
+    font-family: "Formula1-Bold";
+}
+
+#header-menu > ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+#header-menu > ul > li {
+    background-color: #222527;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+#header-menu > ul > li > a {
+    color: #F2F1ED;
+    text-decoration: none;
+    transition: 1s;
+}
+
+#header-menu > ul > li:hover {
+    background-color: #e00600;
+    transition: 0.3s;
+}

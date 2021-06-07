@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>{{ title }}</title>
 </head>
 <body>
     <header>
-        <nav>
+        <h1>F1 Results</h1>
+        <nav id="header-menu">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/drivers">Drivers</a></li>
@@ -26,7 +28,7 @@
     </main>
     <br>
     <footer>
-        <span>F1 app</span>
+        <span>© F1 app</span>
     </footer>
 </body>
 </html>
