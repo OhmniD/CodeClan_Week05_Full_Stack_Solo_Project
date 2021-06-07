@@ -76,3 +76,15 @@ def driver_championship():
         drivers.append(driver)
 
     return drivers
+
+def select_all_excluding_reserves():
+    drivers = []
+
+    sql = "SELECT * FROM drivers WHERE is_reserve = False ORDER BY name ASC"
+    results = run_sql(sql)
+
+    for row in results:
+        driver = Driver(row['name'], row['nationality'], row['championship_points'], row['car_number'], row['is_reserve'], row['picture_url'], row['id'])
+        drivers.append(driver)
+
+    return drivers

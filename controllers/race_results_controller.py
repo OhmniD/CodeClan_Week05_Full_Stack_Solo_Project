@@ -22,7 +22,7 @@ points_system = {
 @race_results_blueprint.route("/race_results", methods=["GET"])
 def new_race_result():
     rounds = round_repository.select_all()
-    drivers = driver_repository.select_all()
+    drivers = driver_repository.select_all_excluding_reserves()
     return render_template("/race_results/index.html", rounds=rounds, drivers=drivers)
 
 @race_results_blueprint.route("/race_results", methods=["POST"])
