@@ -12,8 +12,6 @@ import repositories.driver_team_repository as driver_team_repository
 from models.round import Round
 import repositories.round_repository as round_repository
 
-from models.entrant import Entrant
-import repositories.entrant_repository as entrant_repository
 
 from models.race_result import RaceResult
 import repositories.race_result_repository as race_result_repository
@@ -92,18 +90,6 @@ all_rounds = round_repository.select_all()
 
 for round in all_rounds:
     print(round.__dict__)
-
-## Testing entrants join table
-
-entrant_repository.delete_all()
-
-entrant1 = Entrant(round1, team1)
-entrant_repository.save(entrant1)
-
-all_entrants = entrant_repository.select_all()
-
-for entrant in all_entrants:
-    print(entrant.__dict__)
 
 ## Testing race_results table
 

@@ -1,5 +1,4 @@
 DROP TABLE drivers_teams;
-DROP TABLE entrants;
 DROP TABLE race_results;
 DROP TABLE rounds;
 DROP TABLE drivers;
@@ -37,12 +36,6 @@ CREATE TABLE rounds (
     track_location VARCHAR(255),
     date DATE,
     image_url VARCHAR(255)
-);
-
-CREATE TABLE entrants (
-    id SERIAL PRIMARY KEY,
-    round_id INT REFERENCES rounds(id) ON DELETE CASCADE,
-    team_id INT REFERENCES teams(id) ON DELETE CASCADE
 );
 
 CREATE TABLE race_results (
