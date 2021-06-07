@@ -49,6 +49,7 @@ CREATE TABLE race_results (
     id SERIAL PRIMARY KEY,
     position INT,
     driver_id INT REFERENCES drivers(id) ON DELETE CASCADE,
+    team_id INT REFERENCES teams(id) ON DELETE CASCADE,
     round_id INT REFERENCES rounds(id) ON DELETE CASCADE,
     fastest_lap BOOLEAN
 );

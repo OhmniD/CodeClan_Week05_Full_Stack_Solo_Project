@@ -31,14 +31,16 @@ def save_race_result():
         position = x
         driver_id = request.form[str(x)]
         driver = driver_repository.select(driver_id)
+        team = driver_repository.team(driver)[0]
         round = round_repository.select(request.form['round'])
         fastest_lap = False
         if request.form['fastest_lap'] == str(x) and position <= 10:
             fastest_lap = True
             driver.championship_points += 1
-        race_result = RaceResult(position, driver, round, fastest_lap)
+        race_result = RaceResult(position, driver, team, round, fastest_lap)
         race_result_repository.save(race_result)
         driver.championship_points += int(points_system[str(x)])
+        
         teams = driver_repository.team(driver)
         for team in teams:
             team_repository.team_points(team)

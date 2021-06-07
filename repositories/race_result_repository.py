@@ -4,10 +4,11 @@ from models.race_result import RaceResult
 
 import repositories.driver_repository as driver_repository
 import repositories.round_repository as round_repository
+import repositories.team_repository as team_repository
 
 def save(race_result):
-    sql = "INSERT INTO race_results (position, driver_id, round_id, fastest_lap) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = [race_result.position, race_result.driver.id, race_result.round.id, race_result.fastest_lap]
+    sql = "INSERT INTO race_results (position, driver_id, team_id, round_id, fastest_lap) VALUES (%s, %s, %s, %s, %s) RETURNING id"
+    values = [race_result.position, race_result.driver.id, race_result.team.id, race_result.round.id, race_result.fastest_lap]
     result = run_sql(sql, values)
 
     race_result.id = result[0]['id']
@@ -22,8 +23,9 @@ def select_all():
 
     for row in results:
         driver = driver_repository.select(row['driver_id'])
+        team = team_repository.select(row['team_id'])
         round = round_repository.select(row['round_id'])
-        race_result = RaceResult(row['position'], driver, round, row['fastest_lap'], row['id'])
+        race_result = RaceResult(row['position'], driver, team, round, row['fastest_lap'], row['id'])
         race_results.append(race_result)
     
     return race_results
@@ -37,14 +39,15 @@ def select(id):
 
     if result is not None:
         driver = driver_repository.select(result['driver_id'])
+        team = team_repository.select(row['team_id'])
         round = round_repository.select(result['round_id'])
-        race_result = RaceResult(result['position'], driver, round, result['fastest_lap'], result['id'])
+        race_result = RaceResult(result['position'], driver, team, round, result['fastest_lap'], result['id'])
     
     return race_result
 
 def update(race_result):
-    sql = "UPDATE race_results SET (position, driver_id, round_id, fastest_lap) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [race_result.position, race_result.driver.id, race_result.round.id, race_result.fastest_lap, race_result.id]
+    sql = "UPDATE race_results SET (position, driver_id, team_id round_id, fastest_lap) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [race_result.position, race_result.driver.id, race_result.team.id, race_result.round.id, race_result.fastest_lap, race_result.id]
     run_sql(sql, values)
 
 def delete_all():
@@ -68,7 +71,8 @@ def all_results_by_round(round_id):
         position = row['position']
         fastest_lap = row['fastest_lap']
         driver = driver_repository.select(row['driver_id'])
+        team = team_repository.select(row['team_id'])
         round = round_repository.select(row['round_id'])
-        result = RaceResult(position, driver, round, fastest_lap, id)
+        result = RaceResult(position, driver, team, round, fastest_lap, id)
         results_by_round.append(result)
     return results_by_round

@@ -109,7 +109,7 @@ for entrant in all_entrants:
 
 race_result_repository.delete_all()
 
-result1 = RaceResult(1, driver1, round1, "True")
+result1 = RaceResult(1, driver1, team1, round1, "True")
 race_result_repository.save(result1)
 
 all_race_results = race_result_repository.select_all()
