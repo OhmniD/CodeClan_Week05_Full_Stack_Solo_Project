@@ -1,4 +1,5 @@
 from flask import Blueprint, Flask, redirect, render_template, request
+import sys
 
 from models.driver import Driver
 from models.driver_team import DriverTeam
@@ -41,10 +42,13 @@ def create_driver():
     driver = Driver(name, nationality, championship_points, car_number, is_reserve, picture_url)
     driver_repository.save(driver)
 
-    team_id = request.form['team_id']
-    team = team_repository.select(team_id)
-    driver_team = DriverTeam(driver, team)
-    driver_team_repository.save(driver_team)
+    teams_list = request.form.getlist('team_id')
+    print(teams_list, file=sys.stderr)
+    for teams in teams_list:
+        team_id = teams
+        team = team_repository.select(team_id)
+        driver_team = DriverTeam(driver, team)
+        driver_team_repository.save(driver_team)
 
     return redirect('/drivers')
 
@@ -71,14 +75,16 @@ def update_driver(id):
     driver = Driver(name, nationality, championship_points, car_number, is_reserve, picture_url, id)
     driver_repository.update(driver)
 
-# Will update one team if remove for/if statement, but how to get multiple to update
+    driver_team_repository.delete_all_teams_for_driver(driver)
 
-    #for key in request.form:
-        #if key == 'team_id':
-    team_id = request.form['team_id']
-    team = team_repository.select(team_id)
-    driver_team = DriverTeam(driver, team)
-    driver_team_repository.update(driver_team)
+    teams_list = request.form.getlist('team_id')
+    print(teams_list, file=sys.stderr)
+    for teams in teams_list:
+        team_id = teams
+        team = team_repository.select(team_id)
+        driver_team = DriverTeam(driver, team)
+        driver_team_repository.save(driver_team)
+
     return redirect('/drivers')
 
 @drivers_blueprint.route("/drivers/<id>/results", methods=["GET"])
