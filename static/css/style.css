@@ -71,8 +71,26 @@ main {
 .championship-results {
     display: flex;
     margin-top: 15px;
-    justify-content: space-around;
+    justify-content: space-around; 
 }
+
+.team-championship, .driver-championship {
+    display: flex;
+    align-items: center;
+}
+
+.team-championship > ol, .driver-championship > ol {
+    display: grid;
+    grid-template-columns: fit-content(40%) fit-content(40%);
+    grid-auto-rows: 90px;
+    justify-items: center;
+    align-items: start; 
+}
+
+.team-championship > ol > li:nth-child(2n), .driver-championship > ol > li:nth-child(2n) {
+    align-self: end;
+}
+
 
 .team-championship > ol > li, .driver-championship > ol > li {
     display: flex;
@@ -84,7 +102,8 @@ main {
     border-radius: 8px;
     width: 325px;
     border: 1px solid;
-    border-color: black;                  /* Increment the value of section counter by 1 */ 
+    border-color: black;   
+                   /* Increment the value of section counter by 1 */ 
     /* font-family: "Formula1-Regular";
     font-size: 0.9em; */
 }
