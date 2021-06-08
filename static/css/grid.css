@@ -1,0 +1,15 @@
+.drivers {
+    display: grid;
+    grid-template-columns: fit-content(40%) fit-content(40%);
+    justify-content: space-evenly;
+}
+
+.drivers-list {
+    display: grid;
+    grid-template-columns: fit-content(40%) fit-content(40%);
+    justify-content: space-evenly;
+    margin: 5px;
+    align-items: center;
+    list-style-type: none;
+    grid-gap: 20px;
+}

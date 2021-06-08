@@ -2,10 +2,14 @@
 
 {% block content %}
 
-<section>
-    <ul>
+<section class="driver">
+    <ul class="drivers-list">
         {% for driver in drivers %}
-        <li><a href="/drivers/{{ driver.id }}">Name: {{ driver.name }}</a></li>
+            <li>
+                <img src="{{ driver.picture_url}}" alt="{{ driver.name }} image">
+                <br>
+                <a href="/drivers/{{ driver.id }}">{{ driver.name }}</a>
+            </li>
         {% endfor %}
     </ul>
     <br>
