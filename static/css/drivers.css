@@ -14,5 +14,11 @@
 }
 
 .drivers-list > li > a {
-    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drivers-list > li > a > span {
+    margin-top: 5px;
 }
