@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="driver-championship">
+    <h2>Driver Championship</h2>
+    <ol>
+        {% for driver in driver_championship %}
+        <li>{{ driver.name }} - {{ driver.championship_points }} points</li>
+        {% endfor %}
+    </ol>
+</div>
+
+{% endblock %}

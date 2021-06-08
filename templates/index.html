@@ -15,6 +15,7 @@
             {% for driver in driver_championship %}
             <li>{{ driver.name }} - {{ driver.championship_points }} points</li>
             {% endfor %}
+            <a href="/driver_standings">Show full driver standings</a>
         </ol>
     </div>
     <div class="team-championship">
@@ -24,7 +25,7 @@
             <li style="background-color:{{team.team_colour}};">{{ team.name }} - {{ team.championship_points }} points</li>
             {% endfor %}
         </ol>
-        <ol><a href="/team_standings">Show full team standings</a></ol>
+        <a href="/team_standings">Show full team standings</a>
     </div>
 </section>
 

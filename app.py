@@ -27,5 +27,10 @@ def team_standings():
     team_championship = team_repository.team_championship()
     return render_template('team_standings.html', team_championship=team_championship)
 
+@app.route('/driver_standings')
+def driver_standings():
+    driver_championship = driver_repository.driver_championship()
+    return render_template('driver_standings.html', driver_championship=driver_championship)
+
 if __name__ == '__main__':
     app.run()
