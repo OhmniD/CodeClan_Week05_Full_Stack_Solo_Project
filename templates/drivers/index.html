@@ -6,9 +6,10 @@
     <ul class="drivers-list">
         {% for driver in drivers %}
             <li>
+                <a href="/drivers/{{ driver.id }}">
                 <img src="{{ driver.picture_url}}" alt="{{ driver.name }} image">
                 <br>
-                <a href="/drivers/{{ driver.id }}">{{ driver.name }}</a>
+                {{ driver.name }}</a>
             </li>
         {% endfor %}
     </ul>
