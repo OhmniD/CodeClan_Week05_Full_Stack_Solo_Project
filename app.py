@@ -19,7 +19,7 @@ app.register_blueprint(rounds_blueprint)
 @app.route('/')
 def main():
     driver_championship = driver_repository.driver_championship()
-    team_championship = team_repository.team_championship()
+    team_championship = team_repository.team_championship_top_three()
     return render_template('index.html', driver_championship = driver_championship, team_championship=team_championship)
 
 if __name__ == '__main__':

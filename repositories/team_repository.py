@@ -77,6 +77,18 @@ def team_championship():
 
     return teams
 
+def team_championship_top_three():
+    teams = []
+
+    sql = "SELECT * FROM teams ORDER BY championship_points DESC LIMIT 3"
+    results = run_sql(sql)
+
+    for row in results:
+        team = Team(row['name'], row['headquarters'], row['championship_points'], row['engine_supplier'], row['team_colour'], row['logo_url'], row['id'])
+        teams.append(team)
+
+    return teams
+
 def team_points(team):
     total_team_points = 0
     driver_list = drivers(team)
