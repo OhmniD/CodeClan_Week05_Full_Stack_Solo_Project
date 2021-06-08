@@ -103,6 +103,19 @@ def driver_championship_top_three():
 
     return drivers
 
+def driver_championship_top_three_inc_teams():
+    drivers = []
+
+    sql = "SELECT * FROM drivers WHERE is_reserve IS NOT True ORDER BY championship_points DESC LIMIT 3"
+    results = run_sql(sql)
+
+    for row in results:
+        driver = Driver(row['name'], row['nationality'], row['championship_points'], row['car_number'], row['is_reserve'], row['picture_url'], row['id'])
+        driver.teams = team(driver)
+        drivers.append(driver)
+        
+    return drivers
+
 def select_all_excluding_reserves():
     drivers = []
 

@@ -13,7 +13,7 @@
         <h3>Driver Championship</h3>
         <ol>
             {% for driver in driver_championship %}
-            <li>{{ driver.name }} - {{ driver.championship_points }} points</li>
+            <li style="background-color:{{driver.teams[0].team_colour}};">{{ driver.name }} - {{ driver.championship_points }} points</li>
             {% endfor %}
             <a href="/driver_standings">Show full driver standings</a>
         </ol>

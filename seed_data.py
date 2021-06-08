@@ -80,5 +80,11 @@ driver_team20 = DriverTeam(driver20, team9)
 for x in range(1, 21, 1):
     driver_team_repository.save(eval('driver_team' + str(x)))
 
-round1 = Round("Interlagos", "Sao Paulo, Brazil", "2021-11-07", "static/images/tracks/interlagos.jpg")
-round_repository.save(round1)
+round1 = Round("Bahrain", "Sakhir, Bahrain", "2021-03-28", "static/images/tracks/bahrain.jpg")
+round2 = Round("Imola", "San Marino, Italy", "2021-04-18", "static/images/tracks/imola.jpg")
+round3 = Round("Portimao", "Portimao, Portugal", "2021-05-02", "static/images/tracks/portimao.jpg")
+round4 = Round("Spain", "Barcelona, Spain", "2021-05-09", "static/images/tracks/portimao.jpg")
+roundx = Round("Interlagos", "Sao Paulo, Brazil", "2021-11-07", "static/images/tracks/interlagos.jpg")
+
+for x in range(1, 5, 1):
+    round_repository.save(eval('round' + str(x)))

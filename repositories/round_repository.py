@@ -13,7 +13,7 @@ def save(round):
 def select_all():
     rounds = []
 
-    sql = "SELECT * FROM rounds"
+    sql = "SELECT * FROM rounds ORDER BY date ASC"
     results = run_sql(sql)
 
     for row in results:
