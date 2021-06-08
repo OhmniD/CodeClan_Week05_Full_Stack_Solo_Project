@@ -54,3 +54,28 @@ team10 = Team("Mercedes-AMG Petronas", "Brackley, United Kingdom", 0, "Mercedes"
 
 for x in range(1, 11, 1):
     team_repository.save(eval('team' + str(x)))
+
+driver_team1 = DriverTeam(driver1, team1)
+driver_team2 = DriverTeam(driver2, team1)
+driver_team3 = DriverTeam(driver3, team3)
+driver_team4 = DriverTeam(driver4, team4)
+driver_team5 = DriverTeam(driver5, team2)
+driver_team6 = DriverTeam(driver6, team2)
+driver_team7 = DriverTeam(driver7, team4)
+driver_team8 = DriverTeam(driver8, team4)
+driver_team9 = DriverTeam(driver9, team5)
+driver_team10 = DriverTeam(driver10, team5)
+driver_team11 = DriverTeam(driver11, team7)
+driver_team12 = DriverTeam(driver12, team7)
+driver_team13 = DriverTeam(driver13, team10)
+driver_team14 = DriverTeam(driver14, team10)
+driver_team15 = DriverTeam(driver15, team8)
+driver_team16 = DriverTeam(driver16, team8)
+driver_team17 = DriverTeam(driver17, team6)
+driver_team18 = DriverTeam(driver18, team6)
+driver_team19 = DriverTeam(driver19, team9)
+driver_team20 = DriverTeam(driver20, team9)
+
+
+for x in range(1, 21, 1):
+    driver_team_repository.save(eval('driver_team' + str(x)))
