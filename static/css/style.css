@@ -66,7 +66,6 @@ h2, h3 {
 main {
     padding: 15px;
     font-family: "Poppins";
-    counter-reset: champ_order;
 }
 
 .championship-results {
@@ -85,14 +84,25 @@ main {
     border-radius: 8px;
     width: 325px;
     border: 1px solid;
-    border-color: black;
-    counter-increment: champ_order;                   /* Increment the value of section counter by 1 */
-    content: counter(champ_order) ": "; 
+    border-color: black;                  /* Increment the value of section counter by 1 */ 
     /* font-family: "Formula1-Regular";
     font-size: 0.9em; */
 }
 
+.driver-championship > ol {
+    counter-reset: driver_champ_order;
+}
+
+.driver-championship > ol > li::before {
+    counter-increment: driver_champ_order;                   /* Increment the value of section counter by 1 */
+    content: counter(driver_champ_order) " : "; 
+}
+
+.team-championship > ol {
+    counter-reset: team_champ_order;
+}
+
 .team-championship > ol > li::before {
-    counter-increment: champ_order;                   /* Increment the value of section counter by 1 */
-    content: counter(champ_order) " : "; 
+    counter-increment: team_champ_order;                   /* Increment the value of section counter by 1 */
+    content: counter(team_champ_order) " : "; 
 }
