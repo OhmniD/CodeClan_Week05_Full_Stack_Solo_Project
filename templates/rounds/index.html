@@ -1,16 +1,20 @@
 {% extends "base.html" %}
 
+
 {% block content %}
-
-<section>
-    <ul>
-        {% for round in rounds %}
-        <li><a href="/rounds/{{ round.id }}">Name: {{ round.track_name }}</a></li>
-        {% endfor %}
-    </ul>
-    <br>
-    <a href="/rounds/new">Add new round</a>
+<h2>2021 Rounds</h2>
+<br>
+<a href="/rounds/new">Add new round</a>
+<section class="round">
+<ul class="rounds-list">
+    {% for round in rounds %}
+        <li>
+            <a href="/rounds/{{ round.id }}">
+            <img class="round-image" src="{{ round.image_url}}" alt="{{ round.track_name }} image">
+            <span>{{ round.track_name }} - {{ round.date }}</span></a>
+        </li>
+    {% endfor %}
+</ul>
 </section>
-
 
 {% endblock %}
