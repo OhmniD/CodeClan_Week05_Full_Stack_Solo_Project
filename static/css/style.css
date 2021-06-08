@@ -29,16 +29,20 @@ header, footer {
     background-color: #15141D;
 }
 
+
 header > h1, footer {
     color: #F2F1ED;
     /* text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; */
     font-family: "Formula1-Bold";
 }
 
+h2, h3 {
+    font-family: "Formula1-Bold";
+}
+
 #header-menu > ul {
     display: flex;
     flex-direction: row;
-    list-style-type: none;
 }
 
 #header-menu > ul > li {
@@ -57,4 +61,15 @@ header > h1, footer {
 #header-menu > ul > li:hover {
     background-color: #e00600;
     transition: 0.3s;
+}
+
+main {
+    padding: 15px;
+    font-family: "Poppins";
+}
+
+.championship-results {
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-around;
 }

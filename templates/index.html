@@ -2,18 +2,31 @@
 
 {% block content %}
 
+<h2>Formula 1 Results App</h2>
 <section>
-    <p>Driver's Championship:</p>
-    <ol>
-        {% for driver in driver_championship %}
-        <li>{{ driver.name }} - {{ driver.championship_points }} points</li>
-        {% endfor %}
-    </ol>
-    <ol>
-        {% for team in team_championship %}
-        <li>{{ team.name }} - {{ team.championship_points }} points</li>
-        {% endfor %}
-    </ol>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat suscipit, ducimus at quod sit aspernatur, tempora error in consequatur deleniti vero, architecto optio porro libero exercitationem facilis est accusantium voluptate?
+    Obcaecati magnam tempore hic voluptatem et alias, quibusdam adipisci debitis aspernatur quisquam laudantium fugit possimus eligendi molestiae. Accusantium, perferendis quod magni doloribus adipisci sint ducimus ullam, nam placeat nihil laborum.
+    Tempore consequatur culpa placeat quisquam perferendis nobis voluptate impedit pariatur nesciunt! Voluptates aperiam a minima tempore libero perspiciatis cumque nostrum odit corporis temporibus rerum ipsum, similique dolorum hic nulla officiis.
+    Modi quod at, incidunt voluptatum praesentium repellat perferendis rerum aliquam harum fuga, veniam ipsum nam molestiae facilis reiciendis accusamus a excepturi minima autem explicabo architecto possimus accusantium quaerat! Harum, rerum!
+    Necessitatibus itaque consectetur veniam cupiditate debitis harum ipsam eius eos, ducimus modi. Saepe nulla magnam numquam voluptatibus. Reiciendis quidem, impedit atque quia nulla porro ipsum, quod quam accusamus, velit odio?</p>
+</section>
+<section class="championship-results">
+    <div class="driver-championship">
+        <h3>Driver Championship</h3>
+        <ol>
+            {% for driver in driver_championship %}
+            <li>{{ driver.name }} - {{ driver.championship_points }} points</li>
+            {% endfor %}
+        </ol>
+    </div>
+    <div class="team-championship">
+        <h3>Team Championship</h3>
+        <ol>
+            {% for team in team_championship %}
+            <li>{{ team.name }} - {{ team.championship_points }} points</li>
+            {% endfor %}
+        </ol>
+    </div>
 </section>
 
 {% endblock %}
