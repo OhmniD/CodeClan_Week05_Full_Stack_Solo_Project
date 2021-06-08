@@ -40,3 +40,17 @@ driver20 = Driver("Nikita Mazepin", "Russian", 0, 9, "False", "static/images/dri
 
 for x in range(1, 21, 1):
     driver_repository.save(eval('driver' + str(x)))
+
+team1 = Team("McLaren", "Woking, United Kingdom", 0, "Mercedes", "#ff9e1b", "static/images/teams/mclaren.jpg")
+team2 = Team("Alfa Romeo Racing", "Hinwil, Switzerland", 0, "Ferrari", "#900000", "static/images/teams/alfa_romeo.jpg")
+team3 = Team("Aston Martin Cognizant", "Silverstone, United Kingdom", 0, "Mercedes", "#006F62", "static/images/teams/aston_martin.png")
+team4 = Team("Williams Racing", "Grove, United Kingdom", 0, "Mercedes", "#005AFF", "static/images/teams/williams.jpg")
+team5 = Team("AlphaTauri", "Faenza, Italy", 0, "Honda", "#2B4562", "static/images/teams/alphatauri.jpg")
+team6 = Team("Red Bull Racing", "Milton Keynes, United Kingdom", 0, "Honda", "#0600EF", "static/images/teams/red_bull_racing.jpeg")
+team7 = Team("Scuderia Ferrari", "Maranello, Italy", 0, "Ferrari", "#DC0000", "static/images/teams/ferrari.jpg")
+team8 = Team("Alpine", "Enstone, United Kingdom", 0, "Renault", "#0090FF", "static/images/teams/alpine.jpg")
+team9 = Team("Haas F1", "Kannapolis, United States", 0, "Ferrari", "#FFFFFF", "static/images/teams/haas.jpg")
+team10 = Team("Mercedes-AMG Petronas", "Brackley, United Kingdom", 0, "Mercedes", "#00D2BE", "static/images/teams/mercedes.jpg")
+
+for x in range(1, 11, 1):
+    team_repository.save(eval('team' + str(x)))
