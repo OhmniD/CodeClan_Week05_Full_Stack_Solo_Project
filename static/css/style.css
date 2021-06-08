@@ -66,6 +66,7 @@ h2, h3 {
 main {
     padding: 15px;
     font-family: "Poppins";
+    counter-reset: champ_order;
 }
 
 .championship-results {
@@ -85,6 +86,13 @@ main {
     width: 325px;
     border: 1px solid;
     border-color: black;
+    counter-increment: champ_order;                   /* Increment the value of section counter by 1 */
+    content: counter(champ_order) ": "; 
     /* font-family: "Formula1-Regular";
     font-size: 0.9em; */
+}
+
+.team-championship > ol > li::before {
+    counter-increment: champ_order;                   /* Increment the value of section counter by 1 */
+    content: counter(champ_order) " : "; 
 }
