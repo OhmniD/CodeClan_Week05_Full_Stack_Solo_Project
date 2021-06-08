@@ -1,11 +1,20 @@
 #race-results-form {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
     gap: 8px;
 }
 
 #race-results-form > span {
     display: block;
 
+}
+
+#result-round {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#result-submit-button {
+    margin-top: 25px;
 }

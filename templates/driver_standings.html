@@ -6,7 +6,7 @@
     <h2>Driver Championship</h2>
     <ol>
         {% for driver in driver_championship %}
-        <li>{{ driver.name }} - {{ driver.championship_points }} points</li>
+        <li style="background-color:{{driver.teams[0].team_colour}};">{{ driver.name }} - {{ driver.championship_points }} points</li>
         {% endfor %}
     </ol>
 </div>

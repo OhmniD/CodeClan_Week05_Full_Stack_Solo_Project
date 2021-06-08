@@ -1,3 +1,4 @@
+
 class Driver:
     def __init__(self, name, nationality, championship_points, car_number, is_reserve, picture_url, id = None):
         self.name = name
@@ -7,3 +8,4 @@ class Driver:
         self.is_reserve = is_reserve
         self.picture_url = picture_url
         self.id = id
+        self.teams = []

@@ -29,7 +29,7 @@ def team_standings():
 
 @app.route('/driver_standings')
 def driver_standings():
-    driver_championship = driver_repository.driver_championship()
+    driver_championship = driver_repository.driver_championship_inc_teams()
     return render_template('driver_standings.html', driver_championship=driver_championship)
 
 if __name__ == '__main__':

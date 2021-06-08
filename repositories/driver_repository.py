@@ -1,4 +1,5 @@
 from db.run_sql import run_sql
+import sys
 
 from models.driver import Driver
 from models.team import Team
@@ -75,6 +76,19 @@ def driver_championship():
         driver = Driver(row['name'], row['nationality'], row['championship_points'], row['car_number'], row['is_reserve'], row['picture_url'], row['id'])
         drivers.append(driver)
 
+    return drivers
+
+def driver_championship_inc_teams():
+    drivers = []
+
+    sql = "SELECT * FROM drivers WHERE is_reserve IS NOT True ORDER BY championship_points DESC"
+    results = run_sql(sql)
+
+    for row in results:
+        driver = Driver(row['name'], row['nationality'], row['championship_points'], row['car_number'], row['is_reserve'], row['picture_url'], row['id'])
+        driver.teams = team(driver)
+        drivers.append(driver)
+        
     return drivers
 
 def driver_championship_top_three():
