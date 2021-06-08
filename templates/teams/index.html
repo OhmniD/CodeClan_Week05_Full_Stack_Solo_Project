@@ -1,15 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<section>
-    <ul>
-        {% for team in teams %}
-        <li><a href="/teams/{{ team.id }}">Name: {{ team.name }}</a></li>
-        {% endfor %}
-    </ul>
+    <h2>2021 Teams</h2>
     <br>
     <a href="/teams/new">Add new team</a>
+<section class="teams">
+    <ul class="teams-list">
+        {% for team in teams %}
+            <li style="background-color:{{team.team_colour}};">
+                <a href="/teams/{{ team.id }}">
+                <img class="team-image" src="{{ team.logo_url}}" alt="{{ team.name }} image">
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
 </section>
 
 {% endblock %}

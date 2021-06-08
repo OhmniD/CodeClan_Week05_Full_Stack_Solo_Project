@@ -1,0 +1,20 @@
+.team-image {
+    width: 250px;
+    align-self: center;
+}
+
+.teams-list {
+    display: grid;
+    grid-template-columns: repeat(2, fit-content(40%));
+    justify-content: space-evenly;
+    margin: 5px;
+    align-items: center;
+    list-style-type: none;
+    grid-gap: 10px;
+}
+
+.teams-list >li {
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 12px;
+}
