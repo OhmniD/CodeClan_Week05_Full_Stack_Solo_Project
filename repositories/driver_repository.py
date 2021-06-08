@@ -77,7 +77,7 @@ def driver_championship():
 
     return drivers
 
-def driver_championship():
+def driver_championship_top_three():
     drivers = []
 
     sql = "SELECT * FROM drivers WHERE is_reserve IS NOT True ORDER BY championship_points DESC LIMIT 3"

@@ -4,11 +4,9 @@
 
 <h2>Formula 1 Results App</h2>
 <section>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat suscipit, ducimus at quod sit aspernatur, tempora error in consequatur deleniti vero, architecto optio porro libero exercitationem facilis est accusantium voluptate?
-    Obcaecati magnam tempore hic voluptatem et alias, quibusdam adipisci debitis aspernatur quisquam laudantium fugit possimus eligendi molestiae. Accusantium, perferendis quod magni doloribus adipisci sint ducimus ullam, nam placeat nihil laborum.
-    Tempore consequatur culpa placeat quisquam perferendis nobis voluptate impedit pariatur nesciunt! Voluptates aperiam a minima tempore libero perspiciatis cumque nostrum odit corporis temporibus rerum ipsum, similique dolorum hic nulla officiis.
-    Modi quod at, incidunt voluptatum praesentium repellat perferendis rerum aliquam harum fuga, veniam ipsum nam molestiae facilis reiciendis accusamus a excepturi minima autem explicabo architecto possimus accusantium quaerat! Harum, rerum!
-    Necessitatibus itaque consectetur veniam cupiditate debitis harum ipsam eius eos, ducimus modi. Saepe nulla magnam numquam voluptatibus. Reiciendis quidem, impedit atque quia nulla porro ipsum, quod quam accusamus, velit odio?</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, accusantium perspiciatis tempora optio recusandae excepturi mollitia ad similique dicta repellat voluptatum, officia a veniam labore facere tenetur libero totam. Harum?</p>
+    <p>Voluptatem, dolor sapiente necessitatibus ad, et tempora consequuntur quibusdam nulla non expedita, nemo quod aliquid cumque cupiditate velit animi debitis sunt dicta odio minus deserunt nobis labore. Harum, quos dolores.</p>
+    <p>Ex, recusandae! Omnis maxime quia, perferendis aliquam voluptatum fugiat harum incidunt doloribus delectus reprehenderit nam, non illo accusamus odio natus dolor quisquam velit? Voluptate totam, dolores iste in tenetur tempore.</p>
 </section>
 <section class="championship-results">
     <div class="driver-championship">
@@ -23,9 +21,10 @@
         <h3>Team Championship</h3>
         <ol>
             {% for team in team_championship %}
-            <li>{{ team.name }} - {{ team.championship_points }} points</li>
+            <li style="background-color:{{team.team_colour}};">{{ team.name }} - {{ team.championship_points }} points</li>
             {% endfor %}
         </ol>
+        <ol><a href="/team_standings">Show full team standings</a></ol>
     </div>
 </section>
 
