@@ -1,0 +1,11 @@
+#race-results-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+#race-results-form > span {
+    display: block;
+
+}

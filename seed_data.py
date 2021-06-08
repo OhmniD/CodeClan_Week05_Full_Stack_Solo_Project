@@ -79,3 +79,6 @@ driver_team20 = DriverTeam(driver20, team9)
 
 for x in range(1, 21, 1):
     driver_team_repository.save(eval('driver_team' + str(x)))
+
+round1 = Round("Interlagos", "Sao Paulo, Brazil", "2021-11-07", "static/images/tracks/interlagos.jpg")
+round_repository.save(round1)

@@ -5,28 +5,65 @@
 <section>
     <h2>Add race results</h2>
     <form action="/race_results" method="post">
-        <label for="round">Round:</label>
-            <select name="round">
-                {% for round in rounds %}
-                    <option value="{{ round.id }}">{{ round.track_name }}</option>
-                {% endfor %}
+        <span>
+            <label for="round">Round:</label>
+                <select name="round">
+                    {% for round in rounds %}
+                        <option value="{{ round.id }}">{{ round.track_name }}</option>
+                    {% endfor %}
+                </select>
+        </span>
+        <div id="race-results-form">
+        <span>
+            <label for="1">First place:</label>
+            <select name="1">
+                {% for driver in drivers %}
+                        <option value="{{ driver.id }}">{{ driver.name }}</option>
+                    {% endfor %}
             </select>
-        <label for="1">First place:</label>
-        <select name="1">
-            {% for driver in drivers %}
-                    <option value="{{ driver.id }}">{{ driver.name }}</option>
-                {% endfor %}  
-        </select>
-        <label for="fastest_lap">Fastest lap?</label>
-        <input type="radio" name="fastest_lap" value="1">
-        <label for="2">Second place:</label>
-        <select name="2">
-            {% for driver in drivers %}
-                    <option value="{{ driver.id }}">{{ driver.name }}</option>
-                {% endfor %}  
-        </select>
-        <label for="fastest_lap">Fastest lap?</label>
-        <input type="radio" name="fastest_lap" value="2">
+            <label for="fastest_lap">Fastest lap?</label>
+            <input type="radio" name="fastest_lap" value="1">
+        </span>
+
+        <span>
+            <label for="2">Second place:</label>
+            <select name="2">
+                {% for driver in drivers %}
+                        <option value="{{ driver.id }}">{{ driver.name }}</option>
+                    {% endfor %}
+            </select>
+            <label for="fastest_lap">Fastest lap?</label>
+            <input type="radio" name="fastest_lap" value="2">
+        </span>
+
+        <span>
+            <label for="3">Third place:</label>
+            <select name="3">
+                {% for driver in drivers %}
+                        <option value="{{ driver.id }}">{{ driver.name }}</option>
+                    {% endfor %}
+            </select>
+            <label for="fastest_lap">Fastest lap?</label>
+            <input type="radio" name="fastest_lap" value="3">
+        </span>
+
+        <span>
+            <label for="4">Fourth place:</label>
+            <select name="4">
+                {% for driver in drivers %}
+                        <option value="{{ driver.id }}">{{ driver.name }}</option>
+                    {% endfor %}
+            </select>
+            <label for="fastest_lap">Fastest lap?</label>
+            <input type="radio" name="fastest_lap" value="4">
+        </span>
+        
+        
+        
+        
+        
+        
+        </div>
         <input type="submit" value="Enter results">
 
         {{ values }}
