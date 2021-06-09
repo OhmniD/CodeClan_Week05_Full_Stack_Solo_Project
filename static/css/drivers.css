@@ -22,3 +22,13 @@
 .drivers-list > li > a > span {
     margin-top: 10px;
 }
+
+.show-page-grid {
+    display: grid;
+    grid-template-columns: fit-content(40%) fit-content(40%);
+    justify-content: space-evenly;
+}
+
+.show-grid-image {
+    width: 300px;
+}
