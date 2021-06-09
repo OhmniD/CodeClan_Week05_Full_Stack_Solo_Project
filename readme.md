@@ -1,10 +1,10 @@
-F1 results tracking app
+**F1 results tracking app**
 
 This project was built for week 5 of the CodeClan professional development course. The objective was to build a full stack web application to put it into practice what was learnt in previous weeks. The brief was to produce an app that could be used to keep track of results in a sports league, allowing a user to add and remove teams and fixtures, and update a league table. I decided to base this on Formula 1, to keep track of both the driver and team world championships.
 
 It was built using Flask, PostgreSQL, psycopg2 and HTML/CSS.
 
-Pre-requisites and usage:
+**Pre-requisites and usage:**
 
 Install Python3
 Install postgreSQL
