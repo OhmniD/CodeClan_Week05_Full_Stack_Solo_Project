@@ -4,7 +4,7 @@
 
 <section>
     <h2>Edit round</h2>
-    <form action="/rounds/{{ round.id}}" method="post">
+    <form class="edit-form-flex" action="/rounds/{{ round.id}}" method="post">
         <label for="track_name">Track name:</label>
         <input type="text" name="track_name" value="{{round.track_name}}">
         <label for="track_location">Track location:</label>
@@ -13,6 +13,7 @@
         <input type="date" name="date" value="{{ round.date }}">        
         <label for="image_url">Link to track image:</label>
         <input type="text" name="image_url" value="{{ round.image_url }}">
+        <br>
         <input type="submit" value="Update round">
     </form>
 </section>

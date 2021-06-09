@@ -2,16 +2,20 @@
 
 {% block content %}
 
-<section>
-    <ul>
-        <li>Name: {{ round.track_name }}</li>
-        <li>Track Location: {{round.track_location}}</li>
-        <li>Date: {{round.date}}</li>
-        <li>Image URL: {{round.image_url}}</li>
+<section class="show-page-grid">
+    <div>
+        <ul>
+            <li><b>Name:</b> {{ round.track_name }}</li>
+            <li><b>Track Location:</b> {{round.track_location}}</li>
+            <li><b>Date:</b> {{round.date}}</li>
+            <li><b>Image URL:</b> {{round.image_url}}</li>  
+        </ul>
+        <br>
         <a href="{{round.id}}/edit">Edit round</a>
         <a href="{{round.id}}/delete">Delete round</a>
         <a href="{{round.id}}/results">Round results</a>
-    </ul>
+    </div>
+    <img class="show-grid-image" src="{{ round.image_url }}" alt="{{ round.name }}">
 </section>
 
 

@@ -4,11 +4,9 @@
 
 <section>
     <h2>Add new team</h2>
-    <form action="/teams/{{ team.id }}" method="post">
+    <form class="edit-form-flex" action="/teams/{{ team.id }}" method="post">
         <label for="name">Name:</label>
         <input type="text" name="name" value="{{ team.name }}">
-        
-
         <label for="headquarters">Headquarters:</label>
         <input type="text" name="headquarters" value="{{ team.headquarters }}">
         <label for="engine_supplier">Engine supplier:</label>
@@ -17,6 +15,7 @@
         <input type="text" name="team_colour" value="{{ team.team_colour }}">
         <label for="logo_url">Link to logo:</label>
         <input type="text" name="logo_url" value="{{ team.logo_url }}">
+        <br>
         <input type="submit" value="Update team">
     </form>
 </section>

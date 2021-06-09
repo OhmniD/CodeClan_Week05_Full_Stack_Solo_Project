@@ -29,6 +29,10 @@
     justify-content: space-evenly;
 }
 
+.show-page-grid > div > a {
+    text-decoration: underline;
+}
+
 #team-drivers-heading {
     margin-bottom: 15px;
 }
@@ -43,4 +47,10 @@
     grid-auto-flow: column;
     justify-content: space-evenly;
     gap: 50px;
+}
+
+.edit-form-flex {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
 }
