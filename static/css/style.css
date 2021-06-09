@@ -24,6 +24,10 @@
     color: #e00600 !important;
 }
 
+.front-page-list {
+    margin-left: 30px;
+}
+
 a:link {
     text-decoration: none;
     color: #15141D;
@@ -121,10 +125,9 @@ main {
     border-radius: 8px;
     width: 325px;
     border: 1px solid;
-    border-color: black;   
-                   /* Increment the value of section counter by 1 */ 
-    /* font-family: "Formula1-Regular";
-    font-size: 0.9em; */
+    border-color: black;
+    animation-name: animateIn;
+    animation-duration: 350ms;
 }
 
 .driver-championship > ol {
@@ -145,4 +148,111 @@ main {
     content: counter(team_champ_order) " : "; 
 }
 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
 
+
+  th, td {
+    padding: 15px;
+  }
+
+  @keyframes animateIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.6) translateY(-50px);
+    }
+    
+    100% {
+      opacity: 1;
+    }
+  }
+
+.team-championship-front-page > ol > li:nth-child(1), .driver-championship-front-page > ol > li:nth-child(1) {
+    animation-delay: 100ms;
+}
+
+/* .team-championship-front-page > ol > li:nth-child(2), .driver-championship-front-page > ol > li:nth-child(2) {
+    animation-delay: 200ms;
+}
+
+.team-championship-front-page > ol > li:nth-child(3), .driver-championship-front-page > ol > li:nth-child(3) {
+    animation-delay: 300ms;
+} */
+
+.team-championship > ol > li:nth-child(1), .driver-championship > ol > li:nth-child(1) {
+    animation-delay: 50ms;
+}
+
+.team-championship > ol > li:nth-child(2), .driver-championship > ol > li:nth-child(2) {
+    animation-delay: 100ms;
+}
+
+.team-championship > ol > li:nth-child(3), .driver-championship > ol > li:nth-child(3) {
+    animation-delay: 150ms;
+}
+
+.team-championship > ol > li:nth-child(4), .driver-championship > ol > li:nth-child(4) {
+    animation-delay: 200ms;
+}
+
+.team-championship > ol > li:nth-child(5), .driver-championship > ol > li:nth-child(5) {
+    animation-delay: 250ms;
+}
+
+.team-championship > ol > li:nth-child(6), .driver-championship > ol > li:nth-child(6) {
+    animation-delay: 300ms;
+}
+
+.team-championship > ol > li:nth-child(7), .driver-championship > ol > li:nth-child(7) {
+    animation-delay: 350ms;
+}
+
+.team-championship > ol > li:nth-child(8), .driver-championship > ol > li:nth-child(8) {
+    animation-delay: 400ms;
+}
+
+.team-championship > ol > li:nth-child(9), .driver-championship > ol > li:nth-child(9) {
+    animation-delay: 450ms;
+}
+
+.team-championship > ol > li:nth-child(10), .driver-championship > ol > li:nth-child(10) {
+    animation-delay: 500ms;
+}
+
+.team-championship > ol > li:nth-child(11), .driver-championship > ol > li:nth-child(11) {
+    animation-delay: 550ms;
+}
+
+.team-championship > ol > li:nth-child(12), .driver-championship > ol > li:nth-child(12) {
+    animation-delay: 600ms;
+}
+
+.team-championship > ol > li:nth-child(13), .driver-championship > ol > li:nth-child(13) {
+    animation-delay: 650ms;
+}
+
+.team-championship > ol > li:nth-child(14), .driver-championship > ol > li:nth-child(14) {
+    animation-delay: 700ms;
+}
+
+.team-championship > ol > li:nth-child(15), .driver-championship > ol > li:nth-child(15) {
+    animation-delay: 750ms;
+}
+
+.team-championship > ol > li:nth-child(16), .driver-championship > ol > li:nth-child(16) {
+    animation-delay: 800ms;
+}
+
+.team-championship > ol > li:nth-child(17), .driver-championship > ol > li:nth-child(17) {
+    animation-delay: 850ms;
+}
+
+.team-championship > ol > li:nth-child(19), .driver-championship > ol > li:nth-child(19) {
+    animation-delay: 900ms;
+}
+
+.team-championship > ol > li:nth-child(20), .driver-championship > ol > li:nth-child(20) {
+    animation-delay: 950ms;
+}

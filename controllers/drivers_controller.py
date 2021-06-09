@@ -90,4 +90,5 @@ def update_driver(id):
 @drivers_blueprint.route("/drivers/<id>/results", methods=["GET"])
 def view_driver_results(id):
     results = race_result_repository.all_results_by_driver(id)
-    return render_template("/rounds/results.html", results=results)
+    driver = driver_repository.select(id)
+    return render_template("/drivers/results.html", results=results, driver=driver)

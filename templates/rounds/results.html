@@ -1,13 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<h2>{{ round.track_name }} - {{ round.date }} results</h2>
+<br>
 <section>
-    <ol>
+    <table>
+        <tr>
+          <th>Position</th>
+          <th>Driver Name</th>
+          <th>Team</th>
+        </tr>
         {% for result in results %}
-        <li>{{result.position}} - {{result.driver.name}} ({{result.round.track_name}}) {{result.team.name}}</li>
+        <tr>
+          <td>{{result.position}}</td>
+          <td>{{result.driver.name}}</td>
+          <td>{{result.team.name}}</td>
+        </tr>
         {% endfor %}
-    </ol>
+      </table>
 </section>
 
 

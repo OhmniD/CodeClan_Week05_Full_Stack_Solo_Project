@@ -56,4 +56,5 @@ def update_round(id):
 @rounds_blueprint.route("/rounds/<id>/results", methods=["GET"])
 def view_round_results(id):
     results = race_result_repository.all_results_by_round(id)
-    return render_template("/rounds/results.html", results=results)
+    round = round_repository.select(id)
+    return render_template("/rounds/results.html", results=results, round=round)
