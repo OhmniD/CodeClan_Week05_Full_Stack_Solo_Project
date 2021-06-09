@@ -2,21 +2,31 @@
 
 {% block content %}
 
-<section>
-    <ul>
-        <li>Name: {{ team.name }}</li>
-        <li>Headquarters: {{team.headquarters}}</li>
-
-        <li>Engine supplier: {{team.engine_supplier}}</li>
-        <li>Championship points: {{team.championship_points}}</li>
+<section class="show-page-grid">
+    <div>
+        <ul>
+            <li><b>Name:</b> {{ team.name }}</li>
+            <li><b>Headquarters:</b> {{team.headquarters}}</li>
+            <li><b>Engine supplier:</b> {{team.engine_supplier}}</li>
+            <li><b>Championship points:</b> {{team.championship_points}}</li>
+        
+        </ul>
+        <br>
         <a href="{{team.id}}/edit">Edit team</a>
         <a href="{{team.id}}/delete">Delete team</a>
-    </ul>
-    <ul>
+    </div>
+    <img class="show-grid-image" src="{{ team.logo_url }}" alt="{{ team.name }}">
+    <div>
+        <h2 id="team-drivers-heading">Drivers</h2>
+        <span class="team-page-drivers-grid">
         {% for driver in drivers %}
-            <li>Driver: {{driver.name}}{% if driver.is_reserve == True %} (Reserve) {% endif %} </li>
+                <div>
+                    <h3>{{driver.name}}{% if driver.is_reserve == True %} (Reserve) {% endif %}</h3>
+                    <img class="show-grid-image" src="{{ driver.picture_url }}" alt="{{ driver.name }}">
+                </div>   
         {% endfor %}
-    </ul>
+        </span>
+    </div>
 </section>
 
 

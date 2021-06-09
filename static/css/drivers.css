@@ -29,6 +29,18 @@
     justify-content: space-evenly;
 }
 
+#team-drivers-heading {
+    margin-bottom: 15px;
+}
+
 .show-grid-image {
     width: 300px;
+}
+
+.team-page-drivers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+    gap: 50px;
 }
