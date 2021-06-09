@@ -76,7 +76,7 @@ main {
 
 .team-championship, .driver-championship {
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
 .team-championship > ol, .driver-championship > ol {
@@ -92,7 +92,7 @@ main {
 }
 
 
-.team-championship > ol > li, .driver-championship > ol > li {
+.team-championship > ol > li, .driver-championship > ol > li, .team-championship-front-page > ol > li, .driver-championship-front-page > ol > li {
     display: flex;
     justify-content: center;
     color:#F2F1ED;

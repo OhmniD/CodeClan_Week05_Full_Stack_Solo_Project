@@ -2,8 +2,8 @@
 
 {% block content %}
 
+<h2>Driver Championship</h2>
 <div class="driver-championship">
-    <h2>Driver Championship</h2>
     <ol>
         {% for driver in driver_championship %}
         <li style="background-color:{{driver.teams[0].team_colour}};">{{ driver.name }} - {{ driver.championship_points }} points</li>

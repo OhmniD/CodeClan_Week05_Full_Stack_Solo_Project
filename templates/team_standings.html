@@ -2,8 +2,8 @@
 
 {% block content %}
 
+<h2>Team Championship</h2>
 <div class="team-championship">
-    <h2>Team Championship</h2>
     <ol>
         {% for team in team_championship %}
         <li style="background-color:{{team.team_colour}};">{{ team.name }} - {{ team.championship_points }} points</li>
