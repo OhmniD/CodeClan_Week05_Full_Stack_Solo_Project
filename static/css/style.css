@@ -19,6 +19,19 @@
     list-style-type: none;
 }
 
+a:link {
+    /* text-decoration: none; */
+    color: #15141D;
+}
+
+a:visited {
+    color: #4F6D7A;
+}
+
+a:hover {
+    color: #7D5BA6;
+}
+
 header, footer {
     display: flex;
     align-items: center;
