@@ -4,11 +4,9 @@
 
 <section>
     <h2>Add new team</h2>
-    <form action="/teams" method="post">
+    <form class="edit-form-flex" action="/teams" method="post">
         <label for="name">Name:</label>
         <input type="text" name="name">
-        
-
         <label for="headquarters">Headquarters:</label>
         <input type="text" name="headquarters">
         <label for="engine_supplier">Engine supplier:</label>
@@ -17,6 +15,7 @@
         <input type="text" name="team_colour">
         <label for="logo_url">Link to logo:</label>
         <input type="text" name="logo_url">
+        <br>
         <input type="submit" value="Add team">
     </form>
 </section>

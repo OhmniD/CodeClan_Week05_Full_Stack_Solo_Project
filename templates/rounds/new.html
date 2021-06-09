@@ -4,7 +4,7 @@
 
 <section>
     <h2>Add new round</h2>
-    <form action="/rounds" method="post">
+    <form class="edit-form-flex" action="/rounds" method="post">
         <label for="name">Track name:</label>
         <input type="text" name="track_name">
         <label for="track_location">Track Location:</label>
@@ -13,6 +13,7 @@
         <input type="date" name="date">
         <label for="image_url">Link to track image:</label>
         <input type="text" name="image_url">
+        <br>
         <input type="submit" value="Add round">
     </form>
 </section>
