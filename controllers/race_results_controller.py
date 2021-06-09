@@ -59,9 +59,6 @@ def save_race_result():
         race_result_repository.save(race_result)
         driver.championship_points += int(points_system[str(x)])
         
-        teams = driver_repository.team(driver)
-        for team in teams:
-            team_repository.team_points(team)
         driver_repository.update(driver)
 
         teams = driver_repository.team(driver)
