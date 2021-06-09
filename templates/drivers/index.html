@@ -3,14 +3,17 @@
 {% block content %}
     <h2>2021 Drivers</h2>
     <br>
-    <a href="/drivers/new">Add new driver</a>
+    <p>Here is every driver currently racing in Formula One in 2021. Click on a driver to view or update their information, or click below to add a new driver.</p>
+    <br>
+    <a class="add-new" href="/drivers/new">Add new driver</a>
+    <br>
 <section class="driver">
     <ul class="drivers-list">
         {% for driver in drivers %}
             <li>
                 <a href="/drivers/{{ driver.id }}">
                 <img class="driver-image" src="{{ driver.picture_url}}" alt="{{ driver.name }} image">
-                <span>{{ driver.name }}</span></a>
+                <span>Number {{ driver.car_number }} - {{ driver.name }}</span></a>
             </li>
         {% endfor %}
     </ul>

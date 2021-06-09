@@ -4,15 +4,15 @@
 
 <section>
     <ul>
-        <li>Name: {{ driver.name }}</li>
-        <li>Nationality: {{driver.nationality}}</li>
+        <li><b>Name:</b> {{ driver.name }}</li>
+        <li><b>Nationality:</b> {{driver.nationality}}</li>
 
-        {% for team in teams %}
-            <li>Team: {{team.name}} </li>
+        
+            <li><b>Team(s):</b> {% for team in teams %} {{team.name}} </li>
         {% endfor %}
 
-        <li>Car Number: {{driver.car_number}}</li>
-        <li>Championship points: {{driver.championship_points}}</li>
+        <li><b>Car Number:</b> {{driver.car_number}}</li>
+        <li><b>Championship points:</b> {{driver.championship_points}}</li>
         <a href="{{driver.id}}/edit">Edit driver</a>
         <a href="{{driver.id}}/delete">Delete driver</a>
         <a href="{{driver.id}}/results">Driver results</a>

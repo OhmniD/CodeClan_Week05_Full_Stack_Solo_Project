@@ -4,10 +4,11 @@
 
 <section>
     <h2>Add race results</h2>
+    <br>
     <p>Please ensure you choose a unique driver for each position.</p>
     <form action="/race_results" method="post">
         <span>
-            <label for="round">Round:</label>
+            <b><label for="round">Round:</label></b>
                 <select name="round" id ="result-round">
                     {% for round in rounds %}
                         <option value="{{ round.id }}">{{ round.track_name }}</option>
@@ -16,7 +17,7 @@
         </span>
         <div id="race-results-form">
         <span>
-            <label for="1">First place:</label>
+            <b><label for="1">First place:</label></b>
             <select name="1">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -27,7 +28,7 @@
         </span>
 
         <span>
-            <label for="2">Second place:</label>
+            <b><label for="2">Second place:</label></b>
             <select name="2">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -38,7 +39,7 @@
         </span>
 
         <span>
-            <label for="3">Third place:</label>
+            <b><label for="3">Third place:</label></b>
             <select name="3">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -49,7 +50,7 @@
         </span>
 
         <span>
-            <label for="4">Fourth place:</label>
+            <b><label for="4">Fourth place:</label></b>
             <select name="4">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -60,7 +61,7 @@
         </span>
 
         <span>
-            <label for="5">Fifth place:</label>
+            <b><label for="5">Fifth place:</label></b>
             <select name="5">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -71,7 +72,7 @@
         </span>
 
         <span>
-            <label for="6">Sixth place:</label>
+            <b><label for="6">Sixth place:</label></b>
             <select name="6">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -82,7 +83,7 @@
         </span>
 
         <span>
-            <label for="7">Seventh place:</label>
+            <b><label for="7">Seventh place:</label></b>
             <select name="7">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -93,7 +94,7 @@
         </span>
 
         <span>
-            <label for="8">Eighth place:</label>
+            <b><label for="8">Eighth place:</label></b>
             <select name="8">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -104,7 +105,7 @@
         </span>
 
         <span>
-            <label for="9">Ninth place:</label>
+            <b><label for="9">Ninth place:</label></b>
             <select name="9">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -115,7 +116,7 @@
         </span>
 
         <span>
-            <label for="10">Tenth place:</label>
+            <b><label for="10">Tenth place:</label></b>
             <select name="10">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -126,7 +127,7 @@
         </span>
         
         <span>
-            <label for="11">Eleventh place:</label>
+            <b><label for="11">Eleventh place:</label></b>
             <select name="11">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -137,7 +138,7 @@
         </span>
         
         <span>
-            <label for="12">Twelfth place:</label>
+            <b><label for="12">Twelfth place:</label></b>
             <select name="12">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -148,7 +149,7 @@
         </span>
         
         <span>
-            <label for="13">Thirteenth place:</label>
+            <b><label for="13">Thirteenth place:</label></b>
             <select name="13">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -159,7 +160,7 @@
         </span>
         
         <span>
-            <label for="14">Fourteenth place:</label>
+            <b><label for="14">Fourteenth place:</label></b>
             <select name="14">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -170,7 +171,7 @@
         </span>
         
         <span>
-            <label for="15">Fifteenth place:</label>
+            <b><label for="15">Fifteenth place:</label></b>
             <select name="15">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -181,7 +182,7 @@
         </span>
         
         <span>
-            <label for="16">Sixteenth place:</label>
+            <b><label for="16">Sixteenth place:</label></b>
             <select name="16">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -192,7 +193,7 @@
         </span>
         
         <span>
-            <label for="17">Seventeenth place:</label>
+            <b><label for="17">Seventeenth place:</label></b>
             <select name="17">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -203,7 +204,7 @@
         </span>
         
         <span>
-            <label for="18">Eighteenth place:</label>
+            <b><label for="18">Eighteenth place:</label></b>
             <select name="18">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -214,7 +215,7 @@
         </span>
         
         <span>
-            <label for="19">Ninteenth place:</label>
+            <b><label for="19">Ninteenth place:</label></b>
             <select name="19">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>
@@ -225,7 +226,7 @@
         </span>
         
         <span>
-            <label for="20">Twentieth place:</label>
+            <b><label for="20">Twentieth place:</label></b>
             <select name="20">
                 {% for driver in drivers %}
                         <option value="{{ driver.id }}">{{ driver.name }}</option>

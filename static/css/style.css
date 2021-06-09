@@ -19,9 +19,15 @@
     list-style-type: none;
 }
 
+.add-new {
+    font-family: "Formula1-Bold" !important;
+    color: #e00600 !important;
+}
+
 a:link {
-    /* text-decoration: none; */
+    text-decoration: none;
     color: #15141D;
+    font-family: "Formula1-Regular";
 }
 
 a:visited {
@@ -138,3 +144,5 @@ main {
     counter-increment: team_champ_order;                   /* Increment the value of section counter by 1 */
     content: counter(team_champ_order) " : "; 
 }
+
+
