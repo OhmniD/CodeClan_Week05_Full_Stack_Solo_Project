@@ -21,3 +21,4 @@ Navigate to the site in your browser at _http://localhost:5000_
 
 If you want to add any new images for drivers, teams or rounds, these will have to be placed in /static/images/relevant_folder, and the URL to the image added for the appropriate record in the app.
 
+![f1-app](./f1-flask-app.png)
