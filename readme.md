@@ -6,16 +6,16 @@ It was built using Flask, PostgreSQL, psycopg2 and HTML/CSS.
 
 ### Pre-requisites and usage:
 
-* Install Python3
+* Install Python3 and pip3
 * Install postgreSQL
-* Install Flask:pip3 install flask
-* Install psycopg2: pip3 install psycopg2
+* Install Flask: `pip3 install flask`
+* Install psycopg2: `pip3 install psycopg2`
 
 * Clone/download the project and navigate to that directory in your terminal client
-* Create the database: createdb f1_results
-* Create the database table structure: psql -d f1_results -f db/f1_results.sql
-* Import the seed data: python3 seed_data.py
-* Start Flask: flask run
+* Create the database: `createdb f1_results`
+* Create the database table structure: `psql -d f1_results -f db/f1_results.sql`
+* Import the seed data: `python3 seed_data.py`
+* Start Flask: `flask run`
 
 Navigate to the site in your browser at _http://localhost:5000_
 
